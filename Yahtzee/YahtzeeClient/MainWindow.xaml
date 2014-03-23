@@ -4,23 +4,23 @@
         Title="Yahtzee" Height="700.654" Width="805.279">
     <Grid>
         <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Button Content="Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Content="Twos" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Threes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Fours" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Fives" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Sixes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="3 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Button Content="4 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Full House" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Small Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Large Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Yahtzee!" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,531,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="3 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Content="4 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Full House" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Small Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Large Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Yahtzee!" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,531,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Chance" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,593,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Grand Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,12,0,0" VerticalAlignment="Top" Width="40"/>
