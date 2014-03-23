@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Runtime.Serialization;
+
 namespace YahtzeeLibrary
 {
-    class Category
+    public class Category
     {
         private int score;
         public bool isScored { get; private set; }
@@ -15,37 +17,16 @@ namespace YahtzeeLibrary
         public virtual void setScore(List<int> dice) { }
     }
 
-    class Aces : Category
-    {
-        public override void setScore(List<int> dice)
-        {
+    public class Aces : Category { }
+    public class Twos : Category { }
+    public class Threes : Category { }
+    public class Fours : Category { }
+    public class Fives : Category { }
+    public class Sixes : Category { }
 
-            //score = 10;
-            //base.setScore(dice);
-        }
-    }
-    class Twos : Category
-    {
+    
 
-    }
-    class Threes : Category
-    {
-
-    }
-    class Fours : Category
-    {
-
-    }
-    class Fives : Category
-    {
-
-    }
-    class Sixes : Category
-    {
-
-    }
-
-    class UpperSection
+    public class UpperSection 
     {
         public Aces aces { get; private set; }
         public Twos twos { get; private set; }
@@ -64,13 +45,31 @@ namespace YahtzeeLibrary
         public int getScore()
         {
             return 0;
-        }
+        } 
     }
 
-    class ThreeOfAKind : Category { }
-    class FourOfAKind : Category { }
-    class FullHouse : Category { }
-    class SmStraight : Category { }
-    class LgStraight : Category { }
-    class Yahtzee : Category { }
+
+    public class ThreeOfAKind : Category { }
+    public class FourOfAKind : Category { }
+    public class FullHouse : Category { }
+    public class SmStraight : Category { }
+    public class LgStraight : Category { }
+    public class Yahtzee : Category { }
+    public class Chance : Category { }
+
+
+    public class LowerSection
+    {
+        public ThreeOfAKind threeOfAKind { get; private set; }
+        public FourOfAKind fourOfAKind { get; private set; }
+        public FullHouse fullHouse { get; private set; }
+        public SmStraight smStraight { get; private set; }
+        public LgStraight lgStraight { get; private set; }
+        public Yahtzee yahtzee { get; private set; }
+
+        public int getScore()
+        {
+            return 0;
+        } 
+    }
 }
