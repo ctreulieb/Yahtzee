@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeeClient", "YahtzeeClient\YahtzeeClient.csproj", "{3283884C-7ACD-4D0E-8767-055F3BA8B6B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeeLibrary", "YahtzeeLibrary\YahtzeeLibrary.csproj", "{2D83CBBF-CF7C-4538-B925-B3D18B9CD961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeeService", "YahtzeeService\YahtzeeService.csproj", "{857C7A24-9B94-4EC4-9939-EFA68472B7FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3283884C-7ACD-4D0E-8767-055F3BA8B6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3283884C-7ACD-4D0E-8767-055F3BA8B6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3283884C-7ACD-4D0E-8767-055F3BA8B6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3283884C-7ACD-4D0E-8767-055F3BA8B6B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D83CBBF-CF7C-4538-B925-B3D18B9CD961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D83CBBF-CF7C-4538-B925-B3D18B9CD961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D83CBBF-CF7C-4538-B925-B3D18B9CD961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D83CBBF-CF7C-4538-B925-B3D18B9CD961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{857C7A24-9B94-4EC4-9939-EFA68472B7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{857C7A24-9B94-4EC4-9939-EFA68472B7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{857C7A24-9B94-4EC4-9939-EFA68472B7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{857C7A24-9B94-4EC4-9939-EFA68472B7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+﻿<Window x:Class="YahtzeeClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Yahtzee" Height="700.654" Width="805.279">
+    <Grid>
+        <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Label Content="Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Lower Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="3 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Label Content="4 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Full House" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,433,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Small Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,465,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Large Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,497,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Yahtzee!" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,529,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,561,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Lower Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,593,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Grand Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="175"/>
+    </Grid>
+</Window>
