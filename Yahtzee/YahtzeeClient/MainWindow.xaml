@@ -4,24 +4,104 @@
         Title="Yahtzee" Height="700.654" Width="805.279">
     <Grid>
         <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Label Content="Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Content="Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="3 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Label Content="4 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Full House" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,433,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Small Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,465,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Large Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,497,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Yahtzee!" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,529,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,561,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="3 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Content="4 of a kind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Full House" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Small Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Large Straight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Yahtzee!" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,531,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,593,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Grand Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,44,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp1Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,76,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp1Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,108,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,140,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,172,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,204,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,236,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,268,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1UpperTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,300,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,337,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1ThreeOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,369,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1FourOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,401,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1FullHouse" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,433,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1SmallStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,465,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1LargeStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,497,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Yahtzee" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,529,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,561,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,593,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp1GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,625,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P2" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,44,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp2Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,76,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp2Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,108,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,140,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,172,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,204,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,236,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,268,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2UpperTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,300,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P2" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,337,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2ThreeOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,369,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2FourOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,401,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2FullHouse" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,433,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2SmallStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,465,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2LargeStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,497,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Yahtzee" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,529,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,561,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,593,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp2GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,625,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P3" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,44,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp3Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,76,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp3Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,108,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,140,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,172,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,204,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,236,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,268,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3UpperTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,300,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P3" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,337,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3ThreeOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,369,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3FourOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,401,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3FullHouse" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,433,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3SmallStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,465,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3LargeStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,497,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Yahtzee" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,529,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,561,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,593,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp3GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,625,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P4" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,44,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp4Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,76,0,0" VerticalAlignment="Top"  Width="40"/>
+        <Label Content="" Name="lp4Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,108,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Fours" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,140,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Fives" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,172,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Sixes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,204,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,236,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,268,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4UpperTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,300,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="P4" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,337,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4ThreeOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,369,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4FourOfAKind" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,401,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4FullHouse" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,433,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4SmallStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,465,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4LargeStraight" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,497,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Yahtzee" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,529,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,561,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,593,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="" Name="lp4GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,625,0,0" VerticalAlignment="Top" Width="40"/>
     </Grid>
 </Window>
