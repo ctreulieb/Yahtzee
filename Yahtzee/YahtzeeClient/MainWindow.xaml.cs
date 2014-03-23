@@ -41,20 +41,20 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message); 
             }
         }
-        private delegate void ClientUpdateDelegate(List<Player> players );
-        public void UpdateGui(List<YahtzeeLibrary.Player> players)
+        private delegate void ClientUpdateDelegate(GameState gameState);
+        public void UpdateGui(GameState gameState)
         {
             if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
             {
                 throw new NotImplementedException();
             } else {
-                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), players);
+                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), gameState);
             }
             
         }
 
-        private delegate void StartTurnDelegate(List<Player> players);
-        public void startTurn(List<Player> players)
+        private delegate void StartTurnDelegate(GameState gameState);
+        public void startTurn(GameState gameState)
         {
             if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
             {
@@ -62,7 +62,7 @@ namespace YahtzeeClient
             }
             else
             {
-                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(startTurn), players);
+                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(startTurn), gameState);
             }
         }
 
