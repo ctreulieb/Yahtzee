@@ -20,6 +20,8 @@ namespace YahtzeeLibrary
     public class Aces : Category {
         public override void setScore(int[] dice)
         {
+            //I think we need to initalize score before incrementation
+            score = 0;
             for(int i = 0; i < 5; ++i)
             {
                 if (dice[i] == 1)
@@ -28,11 +30,66 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
-    public class Twos : Category { }
-    public class Threes : Category { }
-    public class Fours : Category { }
-    public class Fives : Category { }
-    public class Sixes : Category { }
+    public class Twos : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 2)
+                    score += 2;
+            }
+            isScored = true;
+        }
+    }
+    public class Threes : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 3)
+                    score += 3;
+            }
+            isScored = true;
+        }
+    }
+    public class Fours : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 4)
+                    score += 4;
+            }
+            isScored = true;
+        }
+    }
+    public class Fives : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 5)
+                    score += 5;
+            }
+            isScored = true;
+        }
+    }
+    public class Sixes : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 6)
+                    score += 6;
+            }
+            isScored = true;
+        }
+    }
     public class ThreeOfAKind : Category { }
     public class FourOfAKind : Category { }
     public class FullHouse : Category { }
