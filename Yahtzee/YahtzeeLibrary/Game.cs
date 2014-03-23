@@ -106,7 +106,9 @@ namespace YahtzeeLibrary
 
         public void scoreAces(int playerID, int[] dice)
         {
-            throw new NotImplementedException();
+            var playerToScore = players.Single(p => p.playerID == playerID);
+            playerToScore.upperSection.aces.setScore(dice);
+            Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
         }
 
         public void scoreTwos(int playerID, int[] dice)

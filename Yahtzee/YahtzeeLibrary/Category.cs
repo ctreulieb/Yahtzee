@@ -10,20 +10,36 @@ namespace YahtzeeLibrary
 {
     public class Category
     {
-        private int score;
-        public bool isScored { get; private set; }
+        protected int score;
+        public bool isScored { get; protected set; }
 
         public int getScore() { return score; }
-        public virtual void setScore(List<int> dice) { }
+        public virtual void setScore(int[] dice) { }
     }
 
-    public class Aces : Category { }
+    public class Aces : Category {
+        public override void setScore(int[] dice)
+        {
+            for(int i = 0; i < 5; ++i)
+            {
+                if (dice[i] == 1)
+                    ++score;
+            }
+            isScored = true;
+        }
+    }
     public class Twos : Category { }
     public class Threes : Category { }
     public class Fours : Category { }
     public class Fives : Category { }
     public class Sixes : Category { }
-
+    public class ThreeOfAKind : Category { }
+    public class FourOfAKind : Category { }
+    public class FullHouse : Category { }
+    public class SmStraight : Category { }
+    public class LgStraight : Category { }
+    public class Yahtzee : Category { }
+    public class Chance : Category { }
     
 
     public class UpperSection 
@@ -47,16 +63,6 @@ namespace YahtzeeLibrary
             return 0;
         } 
     }
-
-
-    public class ThreeOfAKind : Category { }
-    public class FourOfAKind : Category { }
-    public class FullHouse : Category { }
-    public class SmStraight : Category { }
-    public class LgStraight : Category { }
-    public class Yahtzee : Category { }
-    public class Chance : Category { }
-
 
     public class LowerSection
     {
