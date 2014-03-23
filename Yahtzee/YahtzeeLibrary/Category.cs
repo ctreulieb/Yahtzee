@@ -117,7 +117,7 @@ namespace YahtzeeLibrary
 
         public int getScore()
         {
-            return 0;
+            return aces.getScore() + twos.getScore() + threes.getScore() + fours.getScore() + fives.getScore() + sixes.getScore();;
         } 
     }
 
