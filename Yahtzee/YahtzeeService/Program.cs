@@ -15,6 +15,8 @@ namespace YahtzeeService
         {
             try{
                 ServiceHost servHost = new ServiceHost(typeof(Game));
+                // Start the service
+                servHost.Open();
 
                 Console.WriteLine("Yahtzee game service started, Press <Enter> to quit");
                 Console.ReadKey();

@@ -24,11 +24,12 @@ namespace YahtzeeLibrary
 
     [ServiceContract(CallbackContract = typeof(ICallBack))]
     public interface IGame {
+
         [OperationContract]
         int joinGame();
 
         [OperationContract]
-        void leaveGame(int playerID);
+        void leaveGame(int Id);
 
         [OperationContract(IsOneWay=true)]
         void scoreAces(int playerID, int[] dice);
@@ -80,7 +81,7 @@ namespace YahtzeeLibrary
         {
             ICallBack cb = OperationContext.Current.GetCallbackChannel<ICallBack>();
             players.Add(new Player(playerID, cb));
-
+            Console.WriteLine("Player {0} has joined the game!", playerID);
             return playerID++;
         }
 
@@ -90,10 +91,11 @@ namespace YahtzeeLibrary
             }
         }
 
-        public void leaveGame(int playerID)
+        public void leaveGame(int Id)
         {
-            var playerToRemove = players.Single(p => p.playerID == playerID);
+            var playerToRemove = players.Single(p => p.playerID == Id);
             players.Remove(playerToRemove);
+            Console.WriteLine("Player {0} has left the game!" , Id);
         }
 
 
