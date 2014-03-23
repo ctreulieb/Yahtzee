@@ -44,26 +44,42 @@ namespace YahtzeeClient
         private delegate void ClientUpdateDelegate(GameState gameState);
         public void UpdateGui(GameState gameState)
         {
-            if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+            try {
+                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), gameState);
+                }
+            }catch(Exception ex)
             {
-                throw new NotImplementedException();
-            } else {
-                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), gameState);
+                MessageBox.Show(ex.Message); 
             }
+           
             
         }
 
         private delegate void StartTurnDelegate(GameState gameState);
         public void startTurn(GameState gameState)
         {
-            if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+            try
             {
-                throw new NotImplementedException();
+                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(startTurn), gameState);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(startTurn), gameState);
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
