@@ -20,7 +20,6 @@ namespace YahtzeeLibrary
     public class Aces : Category {
         public override void setScore(int[] dice)
         {
-            //I think we need to initalize score before incrementation
             score = 0;
             for(int i = 0; i < 5; ++i)
             {
@@ -90,21 +89,62 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
-    public class ThreeOfAKind : Category { }
-    public class FourOfAKind : Category { }
-    public class FullHouse : Category { }
-    public class SmStraight : Category { }
+    public class ThreeOfAKind : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            isScored = true;
+            Array.Sort(dice);
+            if((dice[0] == dice[1] && dice[1] == dice[2])||(dice[1]==dice[2] && dice[2]==dice[3])||(dice[2]==dice[3] && dice[3]==dice[4]))
+            {
+                for (int i = 0; i < 5; ++i)
+                    score += dice[i];
+            }
+        }
+    }
+    public class FourOfAKind : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            isScored = true;
+            Array.Sort(dice);
+            if(dice[1] == dice[2] && dice[2]==dice[3] && (dice[0] == dice[1] || dice[4]==dice[1]))
+            {
+                for (int i = 0; i < 5; ++i)
+                    score += dice[i];
+            }
+        }
+    }
+    public class FullHouse : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            isScored = true;
+            Array.Sort(dice);
+            if (dice[0] == dice[1] && dice[3] == dice[4] && dice[0] != dice[3] && (dice[2] == dice[0] || dice[2] == dice[3]))
+                score = 25;
+        }
+    }
+    public class SmStraight : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            isScored = true;
+            Array.Sort(dice);
+            if (dice[2] == dice[1] + 1 && dice[3] == dice[2] + 1 && ((dice[1] == dice[0] + 1) || (dice[4] == dice[3] + 1)))
+                score = 30;
+
+        }
+    }
     public class LgStraight : Category {
         public override void setScore(int[] dice)
         {
             score = 0;
-            bool isLgStr = false;
+            isScored = true;
             Array.Sort(dice);
             if (dice[1] == dice[0] + 1 && dice[2] == dice[1] + 1 && dice[3] == dice[2] + 1 && dice[4] == dice[3] + 1)
-                isLgStr = true;
-            if (isLgStr)
                 score = 40;
-            isScored = true;
+            
         }
     }
     public class Yahtzee : Category {
@@ -163,6 +203,7 @@ namespace YahtzeeLibrary
         public SmStraight smStraight { get; private set; }
         public LgStraight lgStraight { get; private set; }
         public Yahtzee yahtzee { get; private set; }
+        public Chance chance { get; private set; }
 
         public int getScore()
         {
