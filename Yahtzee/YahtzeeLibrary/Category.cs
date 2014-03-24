@@ -94,9 +94,43 @@ namespace YahtzeeLibrary
     public class FourOfAKind : Category { }
     public class FullHouse : Category { }
     public class SmStraight : Category { }
-    public class LgStraight : Category { }
-    public class Yahtzee : Category { }
-    public class Chance : Category { }
+    public class LgStraight : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            bool isLgStr = false;
+            Array.Sort(dice);
+            if (dice[0] < dice[1] && dice[1] < dice[2] && dice[2] < dice[3] && dice[3] < dice[4] && dice[4] < dice[5])
+                isLgStr = true;
+            if (isLgStr)
+                score = 40;
+            isScored = true;
+        }
+    }
+    public class Yahtzee : Category {
+        public override void setScore(int[] dice)
+        {
+            bool isYahtzee = true;
+            score = 0;
+            for(int i = 0; i < 4; ++i)
+            {
+                if (dice[i] != dice[5])
+                    isYahtzee = false;
+            }
+            if (isYahtzee)
+                score = 50;
+            isScored = true;
+        }
+    }
+    public class Chance : Category {
+        public override void setScore(int[] dice)
+        {
+            score = 0;
+            for (int i = 0; i < 5; ++i)
+                score += dice[i];
+            isScored = true;
+        }
+    }
     
 
     public class UpperSection 
