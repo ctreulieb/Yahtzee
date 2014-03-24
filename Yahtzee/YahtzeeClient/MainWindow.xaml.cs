@@ -52,8 +52,10 @@ namespace YahtzeeClient
             try {
                 if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
                 {
-                    Player player = gameState.players[playerID - 1];
-                    lp1Aces.Content = player.upperSection.aces.getScore();
+                    fillPlayerOneSheet(gameState.players[0]);
+                    if(gameState.players.Length >= 2) {
+                        fillPlayerTwoSheet(gameState.players[1]);
+                    }
                 }
                 else
                 {
@@ -67,25 +69,59 @@ namespace YahtzeeClient
             
         }
 
-        private delegate void StartTurnDelegate(GameState gameState);
-        public void startTurn(GameState gameState)
+        private void fillPlayerOneSheet(Player player) {
+            lp1Aces.Content = player.upperSection.aces.getScore();
+            lp1Twos.Content = player.upperSection.twos.getScore();
+            lp1Threes.Content = player.upperSection.threes.getScore();
+            lp1Fours.Content = player.upperSection.fours.getScore();
+            lp1Fives.Content = player.upperSection.fives.getScore();
+            lp1Sixes.Content = player.upperSection.sixes.getScore();
+            lp1Subtotal.Content = player.upperSection.getSubTotal();
+            int bonus = 0;
+            if(player.upperSection.hasBonus()) {
+                bonus += 50;
+            }
+            lp1Bonus.Content = bonus;
+            lp1UpperTotal.Content = player.upperSection.getTotal();
+
+            lp1ThreeOfAKind.Content = player.lowerSection.threeOfAKind.getScore();
+            lp1FourOfAKind.Content = player.lowerSection.fourOfAKind.getScore();
+            lp1FullHouse.Content = player.lowerSection.fullHouse.getScore();
+            lp1SmallStraight.Content = player.lowerSection.smStraight.getScore();
+            lp1LargeStraight.Content = player.lowerSection.lgStraight.getScore();
+            lp1Yahtzee.Content = player.lowerSection.yahtzee.getScore();
+            lp1Chance.Content = player.lowerSection.chance.getScore();
+            lp1LowerTotal.Content = player.lowerSection.getTotal();
+            lp1GrandTotal.Content = player.getGrandTotal();
+        }
+
+        private void fillPlayerTwoSheet(Player player)
         {
-            try
+            lp2Aces.Content = player.upperSection.aces.getScore();
+            lp2Twos.Content = player.upperSection.twos.getScore();
+            lp2Threes.Content = player.upperSection.threes.getScore();
+            lp2Fours.Content = player.upperSection.fours.getScore();
+            lp2Fives.Content = player.upperSection.fives.getScore();
+            lp2Sixes.Content = player.upperSection.sixes.getScore();
+            lp2Subtotal.Content = player.upperSection.getSubTotal();
+
+            int bonus = 0;
+            if (player.upperSection.hasBonus())
             {
-                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
-                {
-                    throw new NotImplementedException();
-                }
-                else
-                {
-                    this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(startTurn), gameState);
-                }
+                bonus += 50;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            lp2Bonus.Content = bonus;
+            lp2UpperTotal.Content = player.upperSection.getTotal();
+
+            lp2ThreeOfAKind.Content = player.lowerSection.threeOfAKind.getScore();
+            lp2FourOfAKind.Content = player.lowerSection.fourOfAKind.getScore();
+            lp2FullHouse.Content = player.lowerSection.fullHouse.getScore();
+            lp2SmallStraight.Content = player.lowerSection.smStraight.getScore();
+            lp2LargeStraight.Content = player.lowerSection.lgStraight.getScore();
+            lp2Yahtzee.Content = player.lowerSection.yahtzee.getScore();
+            lp2Chance.Content = player.lowerSection.chance.getScore();
+            lp2LowerTotal.Content = player.lowerSection.getTotal();
+            lp2GrandTotal.Content = player.getGrandTotal();
         }
 
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -98,8 +134,5 @@ namespace YahtzeeClient
         {
             game.scoreAces(playerID, dice);
         }
-
-
-        
     }
 }

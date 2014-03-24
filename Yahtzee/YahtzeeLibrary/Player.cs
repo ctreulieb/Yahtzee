@@ -13,8 +13,6 @@ namespace YahtzeeLibrary
     {
         [DataMember]
         public int playerID { get; private set; }
-        [DataMember]
-        public int Score { get; private set; }
 
         public ICallBack callBack { get; private set; }
         [DataMember]
@@ -28,6 +26,10 @@ namespace YahtzeeLibrary
             this.lowerSection = new LowerSection();
             this.playerID = ID;
             this.callBack = callBack;
+        }
+
+        public int getGrandTotal() {
+            return upperSection.getTotal() + lowerSection.getTotal();
         }
     }
 }

@@ -216,15 +216,23 @@ namespace YahtzeeLibrary
 
         public bool hasBonus()
         {
-            if (getScore() >= 63)
+            if (getSubTotal() >= 63)
                 return true;
             return false;
         }
 
-        public int getScore()
+        public int getSubTotal()
         {
             return aces.getScore() + twos.getScore() + threes.getScore() + fours.getScore() + fives.getScore() + sixes.getScore();;
         } 
+
+        public int getTotal() {
+            int total = getSubTotal();
+            if(hasBonus()) {
+                total += 50;
+            }
+            return total;
+        }
     }
 
     [DataContract]
@@ -255,9 +263,9 @@ namespace YahtzeeLibrary
             chance = new Chance();
         }
 
-        public int getScore()
+        public int getTotal()
         {
-            return 0;
+            return threeOfAKind.getScore() + fourOfAKind.getScore() + fullHouse.getScore() + smStraight.getScore() + lgStraight.getScore() + yahtzee.getScore() + chance.getScore();
         } 
     }
 }

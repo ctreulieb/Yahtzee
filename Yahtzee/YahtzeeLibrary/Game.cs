@@ -17,9 +17,6 @@ namespace YahtzeeLibrary
     {
         [OperationContract(IsOneWay = true)]
         void UpdateGui(GameState gameState);
-
-        [OperationContract(IsOneWay = true)]
-        void startTurn(GameState gameState);
     }
 
     [ServiceContract(CallbackContract = typeof(ICallBack))]
@@ -77,6 +74,7 @@ namespace YahtzeeLibrary
         private List<Player> players = new List<Player>();
         private int playerID = 1;
         private int[] dice = new int[6];
+        private int currentTurn = 1;
         public int joinGame()
         {
             ICallBack cb = OperationContext.Current.GetCallbackChannel<ICallBack>();
@@ -85,9 +83,13 @@ namespace YahtzeeLibrary
             return playerID++;
         }
 
+        private void nextTurn() {
+
+        }
+
         private void updateAllClients(){
             foreach(Player p in players) {
-                p.callBack.UpdateGui( new GameState (players.ToArray(), dice));
+                p.callBack.UpdateGui(new GameState(players.ToArray(), dice, currentTurn));
             }
         }
 

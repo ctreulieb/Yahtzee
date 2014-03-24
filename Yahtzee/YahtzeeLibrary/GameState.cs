@@ -17,10 +17,14 @@ namespace YahtzeeLibrary
         [DataMember]
         public int[] dice { get; private set; }
 
-        public GameState(Player[] p, int[] d)
+        [DataMember]
+        public int turnID { get; private set; }
+
+        public GameState(Player[] p, int[] d, int t)
         {
             dice = d;
             players = p;
+            turnID = t;
         }
     }
 }
