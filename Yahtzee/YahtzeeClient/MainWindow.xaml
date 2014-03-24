@@ -4,7 +4,7 @@
         Title="Yahtzee" Height="700" Width="600" Closing="closing" ResizeMode="NoResize">
     <Grid>
         <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Name="btnOnes" Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Name="btnOnes" Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175" Click="btnOnes_Click"/>
         <Button Name="btnTwos" Content="Twos" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
         <Button Name="btnThrees" Content="Threes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
         <Button Name="btnFours" Content="Fours" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>

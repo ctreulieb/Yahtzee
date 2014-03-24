@@ -27,6 +27,11 @@ namespace YahtzeeClient
     {
         private IGame game = null;
         private int playerID = 0;
+
+        //roll should set this after a roll 
+        private int[] dice = { 1, 1, 2, 3, 4 };
+        //stand in hard values for testing
+
         
         public MainWindow()
         {
@@ -86,6 +91,11 @@ namespace YahtzeeClient
         {
             if (playerID != 0 && game != null)
                 game.leaveGame(playerID);
+        }
+
+        private void btnOnes_Click(object sender, RoutedEventArgs e)
+        {
+            game.scoreAces(playerID, dice);
         }
 
 

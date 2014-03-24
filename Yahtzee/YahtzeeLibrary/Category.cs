@@ -8,15 +8,20 @@ using System.Runtime.Serialization;
 
 namespace YahtzeeLibrary
 {
+    [DataContract]
     public class Category
     {
+        [DataMember]
         protected int score;
+
+        [DataMember]
         public bool isScored { get; protected set; }
 
         public int getScore() { return score; }
         public virtual void setScore(int[] dice) { }
     }
 
+    [DataContract]
     public class Aces : Category {
         public override void setScore(int[] dice)
         {
@@ -181,6 +186,15 @@ namespace YahtzeeLibrary
         public Fours fours { get; private set; }
         public Fives fives { get; private set; }
         public Sixes sixes { get; private set; }
+
+        public UpperSection() {
+            aces = new Aces();
+            twos = new Twos();
+            threes = new Threes();
+            fours = new Fours();
+            fives = new Fives();
+            sixes = new Sixes();
+        }
 
         public bool hasBonus()
         {

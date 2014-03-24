@@ -31,7 +31,7 @@ namespace YahtzeeLibrary
         [OperationContract]
         void leaveGame(int Id);
 
-        [OperationContract(IsOneWay=true)]
+        [OperationContract]
         void scoreAces(int playerID, int[] dice);
 
         [OperationContract(IsOneWay = true)]
@@ -109,6 +109,7 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.aces.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
+            //updateAllClients();
         }
 
         public void scoreTwos(int playerID, int[] dice)
