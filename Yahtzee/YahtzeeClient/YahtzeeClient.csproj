@@ -102,6 +102,14 @@
       <Name>YahtzeeLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\die1.png" />
+    <Resource Include="img\die2.png" />
+    <Resource Include="img\die3.png" />
+    <Resource Include="img\die4.png" />
+    <Resource Include="img\die5.png" />
+    <Resource Include="img\die6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
