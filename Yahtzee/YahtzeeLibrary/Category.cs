@@ -100,7 +100,7 @@ namespace YahtzeeLibrary
             score = 0;
             bool isLgStr = false;
             Array.Sort(dice);
-            if (dice[0] < dice[1] && dice[1] < dice[2] && dice[2] < dice[3] && dice[3] < dice[4] && dice[4] < dice[5])
+            if (dice[1] == dice[0] + 1 && dice[2] == dice[1] + 1 && dice[3] == dice[2] + 1 && dice[4] == dice[3] + 1)
                 isLgStr = true;
             if (isLgStr)
                 score = 40;
