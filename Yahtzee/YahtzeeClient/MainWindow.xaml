@@ -1,26 +1,26 @@
 ﻿<Window x:Class="YahtzeeClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Yahtzee" Height="700" Width="805.279" Closing="closing" ResizeMode="NoResize">
+        Title="Yahtzee" Height="700" Width="600" Closing="closing" ResizeMode="NoResize">
     <Grid>
         <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Button Content="Twos" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Threes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Fours" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Fives" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Sixes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnOnes" Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Name="btnTwos" Content="Twos" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnThrees" Content="Threes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnFours" Content="Fours" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnFives" Content="Fives" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnSixes"  Content="Sixes" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Subtotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Bonus" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="3 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top"  Width="175"/>
-        <Button Content="4 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Full House" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Small Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Large Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Yahtzee!" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,531,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Chance" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnThreeOfAKind" Content="3 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top"  Width="175"/>
+        <Button Name="btnFourOfAKind" Content="4 of a kind" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnFullHouse" Content="Full House" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnSmallStraight" Content="Small Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnLargeStraight" Content="Large Straight" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnYahtzee"  Content="Yahtzee!" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,531,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="btnChance" Content="Chance" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Lower Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,593,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Grand Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,12,0,0" VerticalAlignment="Top" Width="40"/>
@@ -103,5 +103,16 @@
         <Label Content="" Name="lp4Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,625,0,0" VerticalAlignment="Top" Width="40"/>
+        <Image Name="iDie1" HorizontalAlignment="Left" Height="112" Margin="364,44,0,0" VerticalAlignment="Top" Width="112" Source="img/die1.png"/>
+        <Image Name="iDie2" HorizontalAlignment="Left" Height="112" Margin="364,169,0,0" VerticalAlignment="Top" Width="112" Source="img/die2.png"/>
+        <Image Name="iDie3" HorizontalAlignment="Left" Height="112" Margin="364,294,0,0" VerticalAlignment="Top" Width="112" Source="img/die3.png"/>
+        <Image Name="iDie4" HorizontalAlignment="Left" Height="112" Margin="364,419,0,0" VerticalAlignment="Top" Width="112" Source="img/die4.png"/>
+        <Image Name="iDie5" HorizontalAlignment="Left" Height="112" Margin="364,544,0,0" VerticalAlignment="Top" Width="112" Source="img/die5.png"/>
+        <CheckBox Name="cbDie1" Content="Hold Die 1" HorizontalAlignment="Left" Margin="485,93,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="cbDie2" Content="Hold Die 2" HorizontalAlignment="Left" Margin="485,218,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="cbDie3" Content="Hold Die 3" HorizontalAlignment="Left" Margin="485,343,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="cbDie4" Content="Hold Die 4" HorizontalAlignment="Left" Margin="485,468,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="cbDie5"  Content="Hold Die 5" HorizontalAlignment="Left" Margin="485,593,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnRoll" Content="Roll Dice" HorizontalAlignment="Left" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" Margin="364,14,0,0" VerticalAlignment="Top" Width="112"/>
     </Grid>
 </Window>
