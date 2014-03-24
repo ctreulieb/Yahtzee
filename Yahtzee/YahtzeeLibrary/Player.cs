@@ -15,12 +15,12 @@ namespace YahtzeeLibrary
         public int playerID { get; private set; }
         [DataMember]
         public int Score { get; private set; }
-       [DataMember]
+
         public ICallBack callBack { get; private set; }
-       [DataMember]
-       public UpperSection upperSection;
-       [DataMember]
-       public LowerSection lowerSection;
+        [DataMember]
+        public UpperSection upperSection;
+        [DataMember]
+        public LowerSection lowerSection;
 
         public Player(int ID, ICallBack  callBack)
         {

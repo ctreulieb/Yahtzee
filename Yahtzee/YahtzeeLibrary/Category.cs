@@ -34,6 +34,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Twos : Category {
         public override void setScore(int[] dice)
         {
@@ -46,6 +47,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Threes : Category {
         public override void setScore(int[] dice)
         {
@@ -58,6 +60,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Fours : Category {
         public override void setScore(int[] dice)
         {
@@ -70,6 +73,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Fives : Category {
         public override void setScore(int[] dice)
         {
@@ -82,6 +86,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Sixes : Category {
         public override void setScore(int[] dice)
         {
@@ -94,6 +99,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class ThreeOfAKind : Category {
         public override void setScore(int[] dice)
         {
@@ -107,6 +113,7 @@ namespace YahtzeeLibrary
             }
         }
     }
+    [DataContract]
     public class FourOfAKind : Category {
         public override void setScore(int[] dice)
         {
@@ -120,6 +127,7 @@ namespace YahtzeeLibrary
             }
         }
     }
+    [DataContract]
     public class FullHouse : Category {
         public override void setScore(int[] dice)
         {
@@ -130,6 +138,7 @@ namespace YahtzeeLibrary
                 score = 25;
         }
     }
+    [DataContract]
     public class SmStraight : Category {
         public override void setScore(int[] dice)
         {
@@ -141,6 +150,7 @@ namespace YahtzeeLibrary
 
         }
     }
+    [DataContract]
     public class LgStraight : Category {
         public override void setScore(int[] dice)
         {
@@ -152,6 +162,7 @@ namespace YahtzeeLibrary
             
         }
     }
+    [DataContract]
     public class Yahtzee : Category {
         public override void setScore(int[] dice)
         {
@@ -167,6 +178,7 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
+    [DataContract]
     public class Chance : Category {
         public override void setScore(int[] dice)
         {
@@ -176,15 +188,21 @@ namespace YahtzeeLibrary
             isScored = true;
         }
     }
-    
 
+    [DataContract]
     public class UpperSection 
     {
+        [DataMember]
         public Aces aces { get; private set; }
+        [DataMember]
         public Twos twos { get; private set; }
+        [DataMember]
         public Threes threes { get; private set; }
+        [DataMember]
         public Fours fours { get; private set; }
+        [DataMember]
         public Fives fives { get; private set; }
+        [DataMember]
         public Sixes sixes { get; private set; }
 
         public UpperSection() {
@@ -209,15 +227,33 @@ namespace YahtzeeLibrary
         } 
     }
 
+    [DataContract]
     public class LowerSection
     {
+        [DataMember]
         public ThreeOfAKind threeOfAKind { get; private set; }
+        [DataMember]
         public FourOfAKind fourOfAKind { get; private set; }
+        [DataMember]
         public FullHouse fullHouse { get; private set; }
+        [DataMember]
         public SmStraight smStraight { get; private set; }
+        [DataMember]
         public LgStraight lgStraight { get; private set; }
+        [DataMember]
         public Yahtzee yahtzee { get; private set; }
+        [DataMember]
         public Chance chance { get; private set; }
+
+        public LowerSection() {
+            threeOfAKind = new ThreeOfAKind();
+            fourOfAKind = new FourOfAKind();
+            fullHouse = new FullHouse();
+            smStraight = new SmStraight();
+            lgStraight = new LgStraight();
+            yahtzee = new Yahtzee();
+            chance = new Chance();
+        }
 
         public int getScore()
         {

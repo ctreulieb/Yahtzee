@@ -52,7 +52,8 @@ namespace YahtzeeClient
             try {
                 if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
                 {
-                    throw new NotImplementedException();
+                    Player player = gameState.players[playerID - 1];
+                    lp1Aces.Content = player.upperSection.aces.getScore();
                 }
                 else
                 {

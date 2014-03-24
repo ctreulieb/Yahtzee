@@ -12,12 +12,12 @@ namespace YahtzeeLibrary
     public class GameState
     {
         [DataMember]
-        public List<Player> players { get; private set; }
+        public Player[] players { get; private set; }
 
         [DataMember]
         public int[] dice { get; private set; }
 
-        public GameState(List<Player> p, int[] d)
+        public GameState(Player[] p, int[] d)
         {
             dice = d;
             players = p;

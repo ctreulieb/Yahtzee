@@ -87,7 +87,7 @@ namespace YahtzeeLibrary
 
         private void updateAllClients(){
             foreach(Player p in players) {
-                p.callBack.UpdateGui( new GameState (players, dice));
+                p.callBack.UpdateGui( new GameState (players.ToArray(), dice));
             }
         }
 
@@ -106,10 +106,10 @@ namespace YahtzeeLibrary
 
         public void scoreAces(int playerID, int[] dice)
         {
-            var playerToScore = players.Single(p => p.playerID == playerID);
-            playerToScore.upperSection.aces.setScore(dice);
-            Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
-            //updateAllClients();
+                var playerToScore = players.Single(p => p.playerID == playerID);
+                playerToScore.upperSection.aces.setScore(dice);
+                Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
+                updateAllClients();
         }
 
         public void scoreTwos(int playerID, int[] dice)
