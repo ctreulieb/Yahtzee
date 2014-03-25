@@ -316,25 +316,25 @@ namespace YahtzeeClient
            
 
             if(!(bool)cbDie1.IsChecked) {
-                dice[0] = random.Next(1, 6);
+                dice[0] = random.Next(1, 7);
             }
 
             if(!(bool)cbDie2.IsChecked) {
-                dice[1] = random.Next(1, 6);
+                dice[1] = random.Next(1, 7);
             }
             if (!(bool)cbDie3.IsChecked)
             {
-                dice[2] = random.Next(1, 6);
+                dice[2] = random.Next(1, 7);
             }
 
             if (!(bool)cbDie4.IsChecked)
             {
-                dice[3] = random.Next(1, 6);
+                dice[3] = random.Next(1, 7);
             }
 
             if (!(bool)cbDie5.IsChecked)
             {
-                dice[4] = random.Next(1, 6);
+                dice[4] = random.Next(1, 7);
             }
 
             diplayDice();
