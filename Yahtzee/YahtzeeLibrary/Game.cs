@@ -101,11 +101,6 @@ namespace YahtzeeLibrary
         }
 
 
-        public void endTurn(int player, int[] dice)
-        {
-            throw new NotImplementedException();
-        }
-
         public void scoreAces(int playerID, int[] dice)
         {
                 var playerToScore = players.Single(p => p.playerID == playerID);

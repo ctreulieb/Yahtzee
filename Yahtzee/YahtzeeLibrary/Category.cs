@@ -64,13 +64,13 @@ namespace YahtzeeLibrary
     public class Fours : Category {
         public override void setScore(int[] dice)
         {
+            isScored = true;
             score = 0;
             for (int i = 0; i < 5; ++i)
             {
                 if (dice[i] == 4)
                     score += 4;
             }
-            isScored = true;
         }
     }
     [DataContract]
@@ -161,6 +161,7 @@ namespace YahtzeeLibrary
                 score = 40;
             
         }
+        
     }
     [DataContract]
     public class Yahtzee : Category {
@@ -170,7 +171,7 @@ namespace YahtzeeLibrary
             score = 0;
             for(int i = 0; i < 4; ++i)
             {
-                if (dice[i] != dice[5])
+                if (dice[i] != dice[4])
                     isYahtzee = false;
             }
             if (isYahtzee)

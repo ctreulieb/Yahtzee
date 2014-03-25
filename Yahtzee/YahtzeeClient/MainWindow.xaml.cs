@@ -139,7 +139,8 @@ namespace YahtzeeClient
             btnAces.IsEnabled = !player.upperSection.aces.isScored;
             btnTwos.IsEnabled = !player.upperSection.twos.isScored;
             btnThrees.IsEnabled = !player.upperSection.threes.isScored;
-            btnFives.IsEnabled = !player.upperSection.fours.isScored;
+            btnFours.IsEnabled = !player.upperSection.fours.isScored;
+            btnFives.IsEnabled = !player.upperSection.fives.isScored;
             btnSixes.IsEnabled = !player.upperSection.sixes.isScored;
 
             btnThreeOfAKind.IsEnabled = !player.lowerSection.threeOfAKind.isScored;
@@ -177,7 +178,134 @@ namespace YahtzeeClient
 
         private void btnThrees_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                game.scoreThrees(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void btnFours_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreFours(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFives_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreFives(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSixes_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreSixes(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnThreeOfAKind_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreThreeOfAKind(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFourOfAKind_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreFourOfAKind(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFullHouse_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreFullHouse(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSmallStraight_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreSMStraight(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLargeStraight_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreLGStraight(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnYahtzee_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreYahtzee(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnChance_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                game.scoreChance(playerID, dice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
