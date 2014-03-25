@@ -52,9 +52,19 @@ namespace YahtzeeClient
             try {
                 if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
                 {
+                    //fill in player sheets
                     fillPlayerOneSheet(gameState.players[0]);
                     if(gameState.players.Length >= 2) {
                         fillPlayerTwoSheet(gameState.players[1]);
+                    }
+
+                    Player thisClientsPlayer;
+                    //dispable buttons
+                    for(int i =0; i < gameState.players.Length; ++i) {
+                        if(gameState.players[i].playerID == playerID) {
+                            thisClientsPlayer = gameState.players[i];
+                            disableButtons(thisClientsPlayer);
+                        }
                     }
                 }
                 else
@@ -124,6 +134,23 @@ namespace YahtzeeClient
             lp2GrandTotal.Content = player.getGrandTotal();
         }
 
+        private void disableButtons(Player player) {
+
+            btnAces.IsEnabled = !player.upperSection.aces.isScored;
+            btnTwos.IsEnabled = !player.upperSection.twos.isScored;
+            btnThrees.IsEnabled = !player.upperSection.threes.isScored;
+            btnFives.IsEnabled = !player.upperSection.fours.isScored;
+            btnSixes.IsEnabled = !player.upperSection.sixes.isScored;
+
+            btnThreeOfAKind.IsEnabled = !player.lowerSection.threeOfAKind.isScored;
+            btnFourOfAKind.IsEnabled = !player.lowerSection.fourOfAKind.isScored;
+            btnFullHouse.IsEnabled = !player.lowerSection.fullHouse.isScored;
+            btnSmallStraight.IsEnabled = !player.lowerSection.smStraight.isScored;
+            btnLargeStraight.IsEnabled = !player.lowerSection.lgStraight.isScored;
+            btnYahtzee.IsEnabled = !player.lowerSection.yahtzee.isScored;
+            btnChance.IsEnabled = !player.lowerSection.chance.isScored;
+        }
+        
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (playerID != 0 && game != null)
@@ -132,7 +159,25 @@ namespace YahtzeeClient
 
         private void btnOnes_Click(object sender, RoutedEventArgs e)
         {
-            game.scoreAces(playerID, dice);
+            try {
+                game.scoreAces(playerID, dice);
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTwos_Click(object sender, RoutedEventArgs e)
+        {
+            try {
+                game.scoreTwos(playerID, dice);
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnThrees_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
