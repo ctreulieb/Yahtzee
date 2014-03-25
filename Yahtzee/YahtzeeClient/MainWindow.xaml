@@ -113,6 +113,6 @@
         <CheckBox Name="cbDie3" Content="Hold Die 3" HorizontalAlignment="Left" Margin="485,343,0,0" VerticalAlignment="Top"/>
         <CheckBox Name="cbDie4" Content="Hold Die 4" HorizontalAlignment="Left" Margin="485,468,0,0" VerticalAlignment="Top"/>
         <CheckBox Name="cbDie5"  Content="Hold Die 5" HorizontalAlignment="Left" Margin="485,593,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnRoll" Content="Roll Dice" HorizontalAlignment="Left" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" Margin="364,14,0,0" VerticalAlignment="Top" Width="112"/>
+        <Button Name="btnRoll" Content="Roll Dice" HorizontalAlignment="Left" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" Margin="364,14,0,0" VerticalAlignment="Top" Width="112" Click="btnRoll_Click"/>
     </Grid>
 </Window>

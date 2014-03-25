@@ -64,6 +64,7 @@ namespace YahtzeeClient
                         if(gameState.players[i].playerID == playerID) {
                             thisClientsPlayer = gameState.players[i];
                             disableButtons(thisClientsPlayer);
+                            dice = gameState.dice;
                         }
                     }
                 }
@@ -306,6 +307,52 @@ namespace YahtzeeClient
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnRoll_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+           
+
+            if(!(bool)cbDie1.IsChecked) {
+                dice[0] = random.Next(1, 6);
+            }
+
+            if(!(bool)cbDie2.IsChecked) {
+                dice[1] = random.Next(1, 6);
+            }
+            if (!(bool)cbDie3.IsChecked)
+            {
+                dice[2] = random.Next(1, 6);
+            }
+
+            if (!(bool)cbDie4.IsChecked)
+            {
+                dice[3] = random.Next(1, 6);
+            }
+
+            if (!(bool)cbDie5.IsChecked)
+            {
+                dice[4] = random.Next(1, 6);
+            }
+
+            diplayDice();
+        }
+        private void diplayDice() {
+            var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
+            iDie1.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
+            iDie2.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[2].ToString() + ".png", UriKind.Relative);
+            iDie3.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
+            iDie4.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
+            iDie5.Source = new BitmapImage(uriSource);
         }
     }
 }
