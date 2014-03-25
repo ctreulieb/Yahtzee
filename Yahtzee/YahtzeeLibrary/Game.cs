@@ -106,8 +106,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.aces.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
+            this.dice = dice; 
             updateAllClients();
-            this.dice = dice;     
         }
 
         public void scoreTwos(int playerID, int[] dice)
@@ -115,8 +115,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.twos.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Twos!", playerID, playerToScore.upperSection.twos.getScore());
+            this.dice = dice;
             updateAllClients();
-            this.dice = dice;  
         }
 
         public void scoreThrees(int playerID, int[] dice)
@@ -124,8 +124,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.threes.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Threes!", playerID, playerToScore.upperSection.threes.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreFours(int playerID, int[] dice)
@@ -133,8 +133,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.fours.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fours!", playerID, playerToScore.upperSection.fours.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreFives(int playerID, int[] dice)
@@ -142,8 +142,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.fives.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fives!", playerID, playerToScore.upperSection.fives.getScore());
+            this.dice = dice;
             updateAllClients();
-            this.dice = dice;  
         }
 
         public void scoreSixes(int playerID, int[] dice)
@@ -151,8 +151,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.sixes.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Sixes!", playerID, playerToScore.upperSection.sixes.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreThreeOfAKind(int playerID, int[] dice)
@@ -160,8 +160,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.threeOfAKind.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Three of a Kind!", playerID, playerToScore.lowerSection.threeOfAKind.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreFourOfAKind(int playerID, int[] dice)
@@ -169,8 +169,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.fourOfAKind.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Four of a Kind!", playerID, playerToScore.lowerSection.fourOfAKind.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreFullHouse(int playerID, int[] dice)
@@ -178,8 +178,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.fullHouse.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fullhouse!", playerID, playerToScore.lowerSection.fullHouse.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreSMStraight(int playerID, int[] dice)
@@ -187,8 +187,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.smStraight.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Small Straight!", playerID, playerToScore.lowerSection.smStraight.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreLGStraight(int playerID, int[] dice)
@@ -196,8 +196,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.lgStraight.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Large Straight!", playerID, playerToScore.lowerSection.lgStraight.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
 
         public void scoreYahtzee(int playerID, int[] dice)
@@ -205,8 +205,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.yahtzee.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Yahtzee!", playerID, playerToScore.lowerSection.yahtzee.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients();  
         }
 
         public void scoreChance(int playerID, int[] dice)
@@ -214,8 +214,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.lowerSection.chance.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Chance!", playerID, playerToScore.lowerSection.chance.getScore());
-            updateAllClients();
-            this.dice = dice;  
+            this.dice = dice;
+            updateAllClients(); 
         }
     }
 }

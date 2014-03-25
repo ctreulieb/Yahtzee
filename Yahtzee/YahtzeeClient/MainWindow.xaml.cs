@@ -65,6 +65,7 @@ namespace YahtzeeClient
                             thisClientsPlayer = gameState.players[i];
                             disableButtons(thisClientsPlayer);
                             dice = gameState.dice;
+                            diplayDice();
                         }
                     }
                 }
