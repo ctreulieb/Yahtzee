@@ -113,7 +113,8 @@ namespace YahtzeeLibrary
             var playerToScore = players.Single(p => p.playerID == playerID);
             playerToScore.upperSection.aces.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Aces!", playerID, playerToScore.upperSection.aces.getScore());
-            this.dice = dice; 
+            this.dice = dice;
+            nextTurn();
             updateAllClients();
         }
 
@@ -123,6 +124,7 @@ namespace YahtzeeLibrary
             playerToScore.upperSection.twos.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Twos!", playerID, playerToScore.upperSection.twos.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients();
         }
 
@@ -132,6 +134,7 @@ namespace YahtzeeLibrary
             playerToScore.upperSection.threes.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Threes!", playerID, playerToScore.upperSection.threes.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -141,6 +144,7 @@ namespace YahtzeeLibrary
             playerToScore.upperSection.fours.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fours!", playerID, playerToScore.upperSection.fours.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -150,6 +154,7 @@ namespace YahtzeeLibrary
             playerToScore.upperSection.fives.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fives!", playerID, playerToScore.upperSection.fives.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients();
         }
 
@@ -159,6 +164,7 @@ namespace YahtzeeLibrary
             playerToScore.upperSection.sixes.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Sixes!", playerID, playerToScore.upperSection.sixes.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -168,6 +174,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.threeOfAKind.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Three of a Kind!", playerID, playerToScore.lowerSection.threeOfAKind.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -177,6 +184,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.fourOfAKind.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Four of a Kind!", playerID, playerToScore.lowerSection.fourOfAKind.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -186,6 +194,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.fullHouse.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Fullhouse!", playerID, playerToScore.lowerSection.fullHouse.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -195,6 +204,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.smStraight.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Small Straight!", playerID, playerToScore.lowerSection.smStraight.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -204,6 +214,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.lgStraight.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Large Straight!", playerID, playerToScore.lowerSection.lgStraight.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
@@ -213,6 +224,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.yahtzee.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Yahtzee!", playerID, playerToScore.lowerSection.yahtzee.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients();  
         }
 
@@ -222,6 +234,7 @@ namespace YahtzeeLibrary
             playerToScore.lowerSection.chance.setScore(dice);
             Console.WriteLine("Player {0} has scored {1} in Chance!", playerID, playerToScore.lowerSection.chance.getScore());
             this.dice = dice;
+            nextTurn();
             updateAllClients(); 
         }
 
