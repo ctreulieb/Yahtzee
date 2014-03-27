@@ -83,8 +83,8 @@ namespace YahtzeeClient
                     {
                         //reset rolls
                         numRolls = 0;
-                        //reset dice
-                        ////////
+                        //allow rolls
+                        btnRoll.IsEnabled = true;
                         for(int i =0; i < gameState.players.Length; ++i) 
                         {
                             if(gameState.players[i].playerID == playerID)
@@ -253,6 +253,7 @@ namespace YahtzeeClient
             btnLargeStraight.IsEnabled = false;
             btnYahtzee.IsEnabled = false;
             btnChance.IsEnabled = false;
+            btnRoll.IsEnabled = false;
         }
 
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
