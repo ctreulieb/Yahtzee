@@ -47,8 +47,26 @@ namespace YahtzeeClient
 
                 disableButtons();
 
+                switch (playerID)
+                {
+                    case 0 :
+                        MessageBox.Show("To Many Players Already in game Sorry");
+                        break;
+                    case 1:
+                        lp1head.Background = System.Windows.Media.Brushes.PowderBlue;
+                        break;
+                    case 2:
+                        lp2head.Background = System.Windows.Media.Brushes.PowderBlue;
+                        break;
+                    case 3:
+                        lp3head.Background = System.Windows.Media.Brushes.PowderBlue;
+                        break;
+                    case 4:
+                        lp4head.Background = System.Windows.Media.Brushes.PowderBlue;
+                        break;
+                }
+
                 if(playerID == 0) {
-                    MessageBox.Show("To Many Players Already in game Sorry");
                 }
 
             } catch (Exception ex) {
@@ -494,6 +512,17 @@ namespace YahtzeeClient
             {
                 MessageBox.Show(ex.Message);
             }                 
+        }
+
+        private void btnReady_Click(object sender, RoutedEventArgs e)
+        {
+            try {
+                btnReady.IsEnabled = false;
+                game.ready(playerID);
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

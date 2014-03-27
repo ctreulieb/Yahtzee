@@ -28,7 +28,7 @@ namespace YahtzeeLibrary
         [OperationContract]
         int joinGame();
 
-        [OperationContract]
+        [OperationContract(IsOneWay=true)]
         void ready(int id);
 
         [OperationContract(IsOneWay=true)]
@@ -258,8 +258,8 @@ namespace YahtzeeLibrary
 
         public void ready(int id)
         {
-            var player = players.Single(p => p.playerID == playerID);
-            player.ready = true;
+            var readyPlayer = players.Single(p => p.playerID == id);
+            readyPlayer.ready = true;
 
             //check to see if all players are ready.
             //if all players are ready game will start
