@@ -51,6 +51,7 @@ namespace YahtzeeClient
                 {
                     case 0 :
                         MessageBox.Show("To Many Players Already in game Sorry");
+                        this.Close();
                         break;
                     case 1:
                         lp1head.Background = System.Windows.Media.Brushes.PowderBlue;
@@ -527,6 +528,11 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void die1Click(object sender, RoutedEventArgs e)
+        {
+            cbDie1.IsChecked = !cbDie1.IsChecked;
         }
     }
 }
