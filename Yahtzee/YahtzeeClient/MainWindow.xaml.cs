@@ -142,7 +142,7 @@ namespace YahtzeeClient
             lp2GrandTotal.Content = player.getGrandTotal();
         }
 
-<<<<<<< HEAD
+
         private void fillPlayerThreeSheet(Player player)
         {
             lp3Aces.Content = player.upperSection.aces.getScore();
