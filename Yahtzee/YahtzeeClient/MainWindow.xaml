@@ -103,7 +103,7 @@
         <Label Content="" Name="lp4Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,625,0,0" VerticalAlignment="Top" Width="40"/>
-        <Button HorizontalAlignment="Left" Height="112" Margin="364,44,0,0" VerticalAlignment="Top" Width="112" Click="die1Click" Background="White">
+        <Button HorizontalAlignment="Left" Height="112" Margin="364,44,0,0" VerticalAlignment="Top" Width="112" Click="die1Click" Background="White" BorderBrush="White" >
             <Image Name="iDie1"  Width="112" Source="img/die1.png"/>
         </Button>
         <Image Name="iDie2" HorizontalAlignment="Left" Height="112" Margin="364,169,0,0" VerticalAlignment="Top" Width="112" Source="img/die2.png"/>
