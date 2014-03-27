@@ -17,6 +17,9 @@ namespace YahtzeeLibrary
     {
         [OperationContract(IsOneWay = true)]
         void UpdateGui(GameState gameState);
+
+        [OperationContract(IsOneWay = true)]
+        void diceUpdated(int[] dice);
     }
 
     [ServiceContract(CallbackContract = typeof(ICallBack))]
@@ -24,6 +27,9 @@ namespace YahtzeeLibrary
 
         [OperationContract]
         int joinGame();
+
+        [OperationContract(IsOneWay=true)]
+        void updateDice(int[] dice);
 
         [OperationContract]
         void leaveGame(int Id);
@@ -216,6 +222,15 @@ namespace YahtzeeLibrary
             Console.WriteLine("Player {0} has scored {1} in Chance!", playerID, playerToScore.lowerSection.chance.getScore());
             this.dice = dice;
             updateAllClients(); 
+        }
+
+
+        public void updateDice(int[] dice)
+        {
+            this.dice = dice;
+            foreach(Player p in players) {
+                p.callBack.diceUpdated(this.dice);
+            }
         }
     }
 }

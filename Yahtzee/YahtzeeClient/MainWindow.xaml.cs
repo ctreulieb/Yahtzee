@@ -77,8 +77,6 @@ namespace YahtzeeClient
             {
                 MessageBox.Show(ex.Message); 
             }
-           
-            
         }
 
         private void fillPlayerOneSheet(Player player) {
@@ -336,8 +334,7 @@ namespace YahtzeeClient
             {
                 dice[4] = random.Next(1, 7);
             }
-
-            diplayDice();
+            game.updateDice(dice);
         }
         private void diplayDice() {
             var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
@@ -354,6 +351,23 @@ namespace YahtzeeClient
 
             uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
             iDie5.Source = new BitmapImage(uriSource);
+        }
+
+        private delegate void ClientDiceUpdate(int[] dice);
+        public void diceUpdated(int[] dice)
+        {
+            try {
+                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+                {
+                    this.dice = dice;
+                    diplayDice();
+                } else {
+                    this.Dispatcher.BeginInvoke(new ClientDiceUpdate(diceUpdated), dice);
+                }
+
+            }catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
