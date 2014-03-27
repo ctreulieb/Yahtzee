@@ -62,17 +62,20 @@ namespace YahtzeeClient
                     if(gameState.players.Length >= 2) {
                         fillPlayerTwoSheet(gameState.players[1]);
                     }
-
-                    Player thisClientsPlayer;
-                    //dispable buttons
-                    for(int i =0; i < gameState.players.Length; ++i) {
-                        if(gameState.players[i].playerID == playerID) {
-                            thisClientsPlayer = gameState.players[i];
-                            disableButtons(thisClientsPlayer);
-                            dice = gameState.dice;
-                            diplayDice();
+                    if(gameState.turnID == playerID)
+                    {
+                        //turn starts
+                        Player thisClientsPlayer;
+                        //enable buttons
+                        for(int i =0; i < gameState.players.Length; ++i) {
+                            if(gameState.players[i].playerID == playerID) {
+                                thisClientsPlayer = gameState.players[i];
+                                enableButtons(thisClientsPlayer);
+                            }
                         }
                     }
+
+                    
                 }
                 else
                 {
@@ -139,6 +142,7 @@ namespace YahtzeeClient
             lp2GrandTotal.Content = player.getGrandTotal();
         }
 
+<<<<<<< HEAD
         private void fillPlayerThreeSheet(Player player)
         {
             lp3Aces.Content = player.upperSection.aces.getScore();
@@ -168,7 +172,8 @@ namespace YahtzeeClient
             lp3GrandTotal.Content = player.getGrandTotal();
         }
 
-        private void disableButtons(Player player) {
+     
+        private void enableButtons(Player player) {
 
             btnAces.IsEnabled = !player.upperSection.aces.isScored;
             btnTwos.IsEnabled = !player.upperSection.twos.isScored;
@@ -185,7 +190,25 @@ namespace YahtzeeClient
             btnYahtzee.IsEnabled = !player.lowerSection.yahtzee.isScored;
             btnChance.IsEnabled = !player.lowerSection.chance.isScored;
         }
-        
+
+        private void disableButtons()
+        {
+
+            btnAces.IsEnabled =  false;
+            btnTwos.IsEnabled =  false;
+            btnThrees.IsEnabled = false;
+            btnFours.IsEnabled = false;
+            btnFives.IsEnabled = false;
+            btnSixes.IsEnabled = false;
+
+            btnThreeOfAKind.IsEnabled = false;
+            btnFourOfAKind.IsEnabled = false;
+            btnFullHouse.IsEnabled = false;
+            btnSmallStraight.IsEnabled = false;
+            btnLargeStraight.IsEnabled = false;
+            btnYahtzee.IsEnabled = false;
+            btnChance.IsEnabled = false;
+        }
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (playerID != 0 && game != null)
@@ -196,6 +219,7 @@ namespace YahtzeeClient
         {
             try {
                 game.scoreAces(playerID, dice);
+                disableButtons();
             }catch(Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -205,6 +229,7 @@ namespace YahtzeeClient
         {
             try {
                 game.scoreTwos(playerID, dice);
+                disableButtons();
             }catch(Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -215,6 +240,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreThrees(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -227,6 +253,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreFours(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -239,6 +266,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreFives(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -251,6 +279,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreSixes(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -263,6 +292,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreThreeOfAKind(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -275,6 +305,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreFourOfAKind(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -287,6 +318,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreFullHouse(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -299,6 +331,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreSMStraight(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -311,6 +344,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreLGStraight(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -323,6 +357,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreYahtzee(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -335,6 +370,7 @@ namespace YahtzeeClient
             try
             {
                 game.scoreChance(playerID, dice);
+                disableButtons();
             }
             catch (Exception ex)
             {
@@ -371,19 +407,19 @@ namespace YahtzeeClient
             game.updateDice(dice);
         }
         private void diplayDice() {
-            var uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
+            var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
             iDie1.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
             iDie2.Source = new BitmapImage(uriSource);
 
             uriSource = new Uri("img/die" + dice[2].ToString() + ".png", UriKind.Relative);
             iDie3.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
             iDie4.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
             iDie5.Source = new BitmapImage(uriSource);
         }
 
