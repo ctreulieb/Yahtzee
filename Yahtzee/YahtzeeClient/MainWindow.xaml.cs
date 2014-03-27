@@ -26,7 +26,9 @@ namespace YahtzeeClient
     public partial class MainWindow : Window, ICallBack
     {
         private IGame game = null;
+        private Player thisClientsPlayer = null;
         private int playerID = 0;
+        private int numRolls = 0;
 
         //roll should set this after a roll 
         private int[] dice = { 1, 1, 2, 3, 4 };
@@ -81,30 +83,30 @@ namespace YahtzeeClient
                     
                     if(gameState.turnID == playerID)
                     {
-                        //turn starts
-                        Player thisClientsPlayer;
-                        //enable buttons
-                        for(int i =0; i < gameState.players.Length; ++i) {
-                            if(gameState.players[i].playerID == playerID) {
-                                thisClientsPlayer = gameState.players[i];
-                                enableButtons(thisClientsPlayer);
-                            }
+                        //reset rolls
+                        numRolls = 0;
+                        //reset dice
+                        ////////
+                        for(int i =0; i < gameState.players.Length; ++i) 
+                        {
+                            if(gameState.players[i].playerID == playerID)
+                                thisClientsPlayer = gameState.players[i];                                
                         }
                     }
-
-                    
                 }
                 else
                 {
                     this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), gameState);
                 }
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message); 
             }
         }
 
-        private void fillPlayerOneSheet(Player player) {
+        private void fillPlayerOneSheet(Player player) 
+        {
             lp1Aces.Content = player.upperSection.aces.getScore();
             lp1Twos.Content = player.upperSection.twos.getScore();
             lp1Threes.Content = player.upperSection.threes.getScore();
@@ -113,7 +115,8 @@ namespace YahtzeeClient
             lp1Sixes.Content = player.upperSection.sixes.getScore();
             lp1Subtotal.Content = player.upperSection.getSubTotal();
             int bonus = 0;
-            if(player.upperSection.hasBonus()) {
+            if(player.upperSection.hasBonus()) 
+            {
                 bonus += 50;
             }
             lp1Bonus.Content = bonus;
@@ -158,7 +161,6 @@ namespace YahtzeeClient
             lp2LowerTotal.Content = player.lowerSection.getTotal();
             lp2GrandTotal.Content = player.getGrandTotal();
         }
-
 
         private void fillPlayerThreeSheet(Player player)
         {
@@ -239,7 +241,6 @@ namespace YahtzeeClient
 
         private void disableButtons()
         {
-
             btnAces.IsEnabled =  false;
             btnTwos.IsEnabled =  false;
             btnThrees.IsEnabled = false;
@@ -255,6 +256,7 @@ namespace YahtzeeClient
             btnYahtzee.IsEnabled = false;
             btnChance.IsEnabled = false;
         }
+
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (playerID != 0 && game != null)
@@ -263,20 +265,26 @@ namespace YahtzeeClient
 
         private void btnOnes_Click(object sender, RoutedEventArgs e)
         {
-            try {
+            try 
+            {
                 game.scoreAces(playerID, dice);
                 disableButtons();
-            }catch(Exception ex) {
+            }
+            catch(Exception ex) 
+            {
                 MessageBox.Show(ex.Message);
             }
         }
 
         private void btnTwos_Click(object sender, RoutedEventArgs e)
         {
-            try {
+            try 
+            {
                 game.scoreTwos(playerID, dice);
                 disableButtons();
-            }catch(Exception ex) {
+            }
+            catch(Exception ex) 
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -426,30 +434,29 @@ namespace YahtzeeClient
 
         private void btnRoll_Click(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
-           
+            if (++numRolls == 3)
+                btnRoll.IsEnabled = false;
+            if (numRolls == 1)
+                enableButtons(thisClientsPlayer);
 
-            if(!(bool)cbDie1.IsChecked) {
+            Random random = new Random();           
+
+            if(!(bool)cbDie1.IsChecked) 
                 dice[0] = random.Next(1, 7);
-            }
 
-            if(!(bool)cbDie2.IsChecked) {
+            if(!(bool)cbDie2.IsChecked)
                 dice[1] = random.Next(1, 7);
-            }
+
             if (!(bool)cbDie3.IsChecked)
-            {
                 dice[2] = random.Next(1, 7);
-            }
+            
 
             if (!(bool)cbDie4.IsChecked)
-            {
                 dice[3] = random.Next(1, 7);
-            }
 
             if (!(bool)cbDie5.IsChecked)
-            {
                 dice[4] = random.Next(1, 7);
-            }
+            
             game.updateDice(dice);
         }
         private void diplayDice() {
@@ -477,13 +484,16 @@ namespace YahtzeeClient
                 {
                     this.dice = dice;
                     diplayDice();
-                } else {
+                } else 
+                {
                     this.Dispatcher.BeginInvoke(new ClientDiceUpdate(diceUpdated), dice);
                 }
 
-            }catch (Exception ex) {
-                MessageBox.Show(ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }                 
         }
     }
 }
