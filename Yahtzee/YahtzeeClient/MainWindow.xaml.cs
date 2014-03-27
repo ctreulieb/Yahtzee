@@ -42,6 +42,11 @@ namespace YahtzeeClient
                 game = channel.CreateChannel();
 
                 playerID = game.joinGame();
+
+                if(playerID == 0) {
+                    MessageBox.Show("To Many Players Already in game Sorry");
+                }
+
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message); 
             }
@@ -132,6 +137,35 @@ namespace YahtzeeClient
             lp2Chance.Content = player.lowerSection.chance.getScore();
             lp2LowerTotal.Content = player.lowerSection.getTotal();
             lp2GrandTotal.Content = player.getGrandTotal();
+        }
+
+        private void fillPlayerThreeSheet(Player player)
+        {
+            lp3Aces.Content = player.upperSection.aces.getScore();
+            lp3Twos.Content = player.upperSection.twos.getScore();
+            lp3Threes.Content = player.upperSection.threes.getScore();
+            lp3Fours.Content = player.upperSection.fours.getScore();
+            lp3Fives.Content = player.upperSection.fives.getScore();
+            lp3Sixes.Content = player.upperSection.sixes.getScore();
+            lp3Subtotal.Content = player.upperSection.getSubTotal();
+
+            int bonus = 0;
+            if (player.upperSection.hasBonus())
+            {
+                bonus += 50;
+            }
+            lp3Bonus.Content = bonus;
+            lp3UpperTotal.Content = player.upperSection.getTotal();
+
+            lp3ThreeOfAKind.Content = player.lowerSection.threeOfAKind.getScore();
+            lp3FourOfAKind.Content = player.lowerSection.fourOfAKind.getScore();
+            lp3FullHouse.Content = player.lowerSection.fullHouse.getScore();
+            lp3SmallStraight.Content = player.lowerSection.smStraight.getScore();
+            lp3LargeStraight.Content = player.lowerSection.lgStraight.getScore();
+            lp3Yahtzee.Content = player.lowerSection.yahtzee.getScore();
+            lp3Chance.Content = player.lowerSection.chance.getScore();
+            lp3LowerTotal.Content = player.lowerSection.getTotal();
+            lp3GrandTotal.Content = player.getGrandTotal();
         }
 
         private void disableButtons(Player player) {
