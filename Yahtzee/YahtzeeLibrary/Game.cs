@@ -28,6 +28,9 @@ namespace YahtzeeLibrary
         [OperationContract]
         int joinGame();
 
+        [OperationContract]
+        void ready(int id);
+
         [OperationContract(IsOneWay=true)]
         void updateDice(int[] dice);
 
@@ -236,6 +239,27 @@ namespace YahtzeeLibrary
             this.dice = dice;
             foreach(Player p in players) {
                 p.callBack.diceUpdated(this.dice);
+            }
+        }
+
+
+        public void ready(int id)
+        {
+            var player = players.Single(p => p.playerID == playerID);
+            player.ready = true;
+
+            //check to see if all players are ready.
+            //if all players are ready game will start
+            bool allPlayersReady = true;
+            foreach(Player p in players) 
+            {
+                if (!p.ready)
+                    allPlayersReady = false;
+            }
+
+            if(allPlayersReady)
+            {
+                updateAllClients();
             }
         }
     }

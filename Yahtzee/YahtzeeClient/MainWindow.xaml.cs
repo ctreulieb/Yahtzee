@@ -43,6 +43,8 @@ namespace YahtzeeClient
 
                 playerID = game.joinGame();
 
+                disableButtons();
+
                 if(playerID == 0) {
                     MessageBox.Show("To Many Players Already in game Sorry");
                 }
