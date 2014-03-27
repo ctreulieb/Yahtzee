@@ -15,6 +15,9 @@ namespace YahtzeeLibrary
         public int playerID { get; private set; }
 
         public ICallBack callBack { get; private set; }
+
+        public bool ready { get; set; } 
+
         [DataMember]
         public UpperSection upperSection;
         [DataMember]
