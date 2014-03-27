@@ -83,6 +83,11 @@ namespace YahtzeeLibrary
         private int currentTurn = 1;
         public int joinGame()
         {
+            //no more than 4 players
+            if(playerID > 4) {
+                return 0;
+            }
+
             ICallBack cb = OperationContext.Current.GetCallbackChannel<ICallBack>();
             players.Add(new Player(playerID, cb));
             Console.WriteLine("Player {0} has joined the game!", playerID);
