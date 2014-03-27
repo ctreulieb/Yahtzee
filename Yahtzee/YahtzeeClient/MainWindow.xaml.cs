@@ -58,10 +58,25 @@ namespace YahtzeeClient
                 if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
                 {
                     //fill in player sheets
-                    fillPlayerOneSheet(gameState.players[0]);
-                    if(gameState.players.Length >= 2) {
-                        fillPlayerTwoSheet(gameState.players[1]);
+                    foreach(Player p in gameState.players) 
+                    {
+                        switch(p.playerID)
+                        {
+                            case 1 :
+                                fillPlayerOneSheet(p);
+                                break;
+                            case 2 :
+                                fillPlayerTwoSheet(p);
+                                break;
+                            case 3 :
+                                fillPlayerThreeSheet(p);
+                                break;
+                            case 4 :
+                                fillPlayerFourSheet(p);
+                                break;
+                        }
                     }
+                    
                     if(gameState.turnID == playerID)
                     {
                         //turn starts
@@ -170,6 +185,35 @@ namespace YahtzeeClient
             lp3Chance.Content = player.lowerSection.chance.getScore();
             lp3LowerTotal.Content = player.lowerSection.getTotal();
             lp3GrandTotal.Content = player.getGrandTotal();
+        }
+
+        private void fillPlayerFourSheet(Player player)
+        {
+            lp4Aces.Content = player.upperSection.aces.getScore();
+            lp4Twos.Content = player.upperSection.twos.getScore();
+            lp4Threes.Content = player.upperSection.threes.getScore();
+            lp4Fours.Content = player.upperSection.fours.getScore();
+            lp4Fives.Content = player.upperSection.fives.getScore();
+            lp4Sixes.Content = player.upperSection.sixes.getScore();
+            lp4Subtotal.Content = player.upperSection.getSubTotal();
+
+            int bonus = 0;
+            if (player.upperSection.hasBonus())
+            {
+                bonus += 50;
+            }
+            lp4Bonus.Content = bonus;
+            lp4UpperTotal.Content = player.upperSection.getTotal();
+
+            lp4ThreeOfAKind.Content = player.lowerSection.threeOfAKind.getScore();
+            lp4FourOfAKind.Content = player.lowerSection.fourOfAKind.getScore();
+            lp4FullHouse.Content = player.lowerSection.fullHouse.getScore();
+            lp4SmallStraight.Content = player.lowerSection.smStraight.getScore();
+            lp4LargeStraight.Content = player.lowerSection.lgStraight.getScore();
+            lp4Yahtzee.Content = player.lowerSection.yahtzee.getScore();
+            lp4Chance.Content = player.lowerSection.chance.getScore();
+            lp4LowerTotal.Content = player.lowerSection.getTotal();
+            lp4GrandTotal.Content = player.getGrandTotal();
         }
 
      
