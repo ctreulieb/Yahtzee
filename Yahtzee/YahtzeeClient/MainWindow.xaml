@@ -1,7 +1,7 @@
 ﻿<Window x:Class="YahtzeeClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Yahtzee" Height="700" Width="600" Closing="closing" ResizeMode="NoResize">
+        Title="Yahtzee" Height="700" Width="610" Closing="closing" ResizeMode="NoResize">
     <Grid>
         <Label Content="Upper Section" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="175"/>
         <Button Name="btnAces" Content="Aces" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"  Width="175" Click="btnOnes_Click"/>
@@ -23,7 +23,7 @@
         <Button Name="btnChance" Content="Chance" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Width="175" Click="btnChance_Click"/>
         <Label Content="Lower Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,593,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Grand Total" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Name="lp1head" Content="P1" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,12,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp1Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,44,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp1Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,76,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp1Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,108,0,0" VerticalAlignment="Top" Width="40"/>
@@ -43,7 +43,7 @@
         <Label Content="" Name="lp1Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp1LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp1GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="186,625,0,0" VerticalAlignment="Top" Width="40"/>
-        <Label Content="P2" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Name="lp2head" Content="P2" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,12,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp2Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,44,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp2Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,76,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp2Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,108,0,0" VerticalAlignment="Top" Width="40"/>
@@ -63,7 +63,7 @@
         <Label Content="" Name="lp2Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp2LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp2GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="227,625,0,0" VerticalAlignment="Top" Width="40"/>
-        <Label Content="P3" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Name="lp3head" Content="P3" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,12,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp3Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,44,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp3Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,76,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp3Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,108,0,0" VerticalAlignment="Top" Width="40"/>
@@ -83,7 +83,7 @@
         <Label Content="" Name="lp3Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp3LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp3GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="268,625,0,0" VerticalAlignment="Top" Width="40"/>
-        <Label Content="P4" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,12,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Name="lp4head" Content="P4" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,12,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4Aces" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,44,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp4Twos" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,76,0,0" VerticalAlignment="Top"  Width="40"/>
         <Label Content="" Name="lp4Threes" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,108,0,0" VerticalAlignment="Top" Width="40"/>
@@ -114,5 +114,6 @@
         <CheckBox Name="cbDie4" Content="Hold Die 4" HorizontalAlignment="Left" Margin="485,468,0,0" VerticalAlignment="Top"/>
         <CheckBox Name="cbDie5"  Content="Hold Die 5" HorizontalAlignment="Left" Margin="485,593,0,0" VerticalAlignment="Top"/>
         <Button Name="btnRoll" Content="Roll Dice" HorizontalAlignment="Left" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" Margin="364,14,0,0" VerticalAlignment="Top" Width="112" Click="btnRoll_Click"/>
+        <Button Name="btnReady" Content="Ready" HorizontalAlignment="Left" Background="White" BorderBrush="Black" BorderThickness="1" FontSize="16" Margin="478,14,0,0" VerticalAlignment="Top" Width="112"/>
     </Grid>
 </Window>
