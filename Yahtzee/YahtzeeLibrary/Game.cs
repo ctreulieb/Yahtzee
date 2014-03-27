@@ -90,7 +90,8 @@ namespace YahtzeeLibrary
         }
 
         private void nextTurn() {
-
+            if (++currentTurn > players.Count)
+                currentTurn = 1;
         }
 
         private void updateAllClients(){
