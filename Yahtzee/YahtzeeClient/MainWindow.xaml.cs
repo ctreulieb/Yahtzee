@@ -340,19 +340,19 @@ namespace YahtzeeClient
             diplayDice();
         }
         private void diplayDice() {
-            var uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
+            var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
             iDie1.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
             iDie2.Source = new BitmapImage(uriSource);
 
             uriSource = new Uri("img/die" + dice[2].ToString() + ".png", UriKind.Relative);
             iDie3.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
             iDie4.Source = new BitmapImage(uriSource);
 
-            uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
+            uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
             iDie5.Source = new BitmapImage(uriSource);
         }
     }
