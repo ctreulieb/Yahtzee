@@ -101,10 +101,13 @@ namespace YahtzeeClient
                     
                     if(gameState.turnID == playerID)
                     {
-                        //reset rolls
                         numRolls = 0;
-                        //allow rolls
                         btnRoll.IsEnabled = true;
+                        cbDie1.IsChecked = false;
+                        cbDie2.IsChecked = false;
+                        cbDie3.IsChecked = false;
+                        cbDie4.IsChecked = false;
+                        cbDie5.IsChecked = false;
                         for(int i =0; i < gameState.players.Length; ++i) 
                         {
                             if(gameState.players[i].playerID == playerID)
