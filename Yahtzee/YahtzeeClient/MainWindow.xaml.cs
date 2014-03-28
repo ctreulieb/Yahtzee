@@ -66,7 +66,7 @@ namespace YahtzeeClient
                         lp4head.Background = System.Windows.Media.Brushes.PowderBlue;
                         break;
                 }
-
+                toggleDieCheckboxEnable(false);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message); 
             }
@@ -106,16 +106,6 @@ namespace YahtzeeClient
                         cbDie3.IsChecked = false;
                         cbDie4.IsChecked = false;
                         cbDie5.IsChecked = false;
-
-                        cbDie1.IsEnabled = false;
-                        cbDie2.IsEnabled = false;
-                        cbDie3.IsEnabled = false;
-                        cbDie4.IsEnabled = false;
-                        cbDie5.IsEnabled = false;
-
-
-
-
 
                         for(int i =0; i < gameState.players.Length; ++i) 
                         {
@@ -462,18 +452,23 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message);
             }
         }
+        private void toggleDieCheckboxEnable(bool value) {
+            cbDie1.IsEnabled = value;
+            cbDie2.IsEnabled = value;
+            cbDie3.IsEnabled = value;
+            cbDie4.IsEnabled = value;
+            cbDie5.IsEnabled = value;
+        }
 
         private void btnRoll_Click(object sender, RoutedEventArgs e)
         {
-            if (++numRolls == 3)
+            if (++numRolls == 3) {
                 btnRoll.IsEnabled = false;
+                toggleDieCheckboxEnable(false);
+            }   
             if (numRolls == 1) {
                 enableButtons(thisClientsPlayer);
-                cbDie1.IsEnabled = true;
-                cbDie2.IsEnabled = true;
-                cbDie3.IsEnabled = true;
-                cbDie4.IsEnabled = true;
-                cbDie5.IsEnabled = true;
+                toggleDieCheckboxEnable(true);
             }
 
             Random random = new Random();           
