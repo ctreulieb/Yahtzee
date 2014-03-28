@@ -67,9 +67,6 @@ namespace YahtzeeClient
                         break;
                 }
 
-                if(playerID == 0) {
-                }
-
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message); 
             }
@@ -109,6 +106,17 @@ namespace YahtzeeClient
                         cbDie3.IsChecked = false;
                         cbDie4.IsChecked = false;
                         cbDie5.IsChecked = false;
+
+                        cbDie1.IsEnabled = false;
+                        cbDie2.IsEnabled = false;
+                        cbDie3.IsEnabled = false;
+                        cbDie4.IsEnabled = false;
+                        cbDie5.IsEnabled = false;
+
+
+
+
+
                         for(int i =0; i < gameState.players.Length; ++i) 
                         {
                             if(gameState.players[i].playerID == playerID)
@@ -459,8 +467,14 @@ namespace YahtzeeClient
         {
             if (++numRolls == 3)
                 btnRoll.IsEnabled = false;
-            if (numRolls == 1)
+            if (numRolls == 1) {
                 enableButtons(thisClientsPlayer);
+                cbDie1.IsEnabled = true;
+                cbDie2.IsEnabled = true;
+                cbDie3.IsEnabled = true;
+                cbDie4.IsEnabled = true;
+                cbDie5.IsEnabled = true;
+            }
 
             Random random = new Random();           
 
@@ -532,7 +546,33 @@ namespace YahtzeeClient
 
         private void die1Click(object sender, RoutedEventArgs e)
         {
-            cbDie1.IsChecked = !cbDie1.IsChecked;
+            if(numRolls != 0)
+                cbDie1.IsChecked = !cbDie1.IsChecked;
         }
+
+        private void die2Click(object sender, RoutedEventArgs e)
+        {
+            if (numRolls != 0)
+                cbDie2.IsChecked = !cbDie2.IsChecked;
+        }
+
+        private void die3Click(object sender, RoutedEventArgs e)
+        {
+            if (numRolls != 0)
+                cbDie3.IsChecked = !cbDie3.IsChecked;
+        }
+
+        private void die4Click(object sender, RoutedEventArgs e)
+        {
+            if (numRolls != 0)
+                cbDie4.IsChecked = !cbDie4.IsChecked;
+        }
+
+        private void dick5Click(object sender, RoutedEventArgs e)
+        {
+            if (numRolls != 0)
+                cbDie5.IsChecked = !cbDie5.IsChecked;
+        }
+
     }
 }
