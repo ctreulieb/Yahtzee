@@ -103,13 +103,21 @@
         <Label Content="" Name="lp4Chance" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,561,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4LowerTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,593,0,0" VerticalAlignment="Top" Width="40"/>
         <Label Content="" Name="lp4GrandTotal" BorderBrush="Black" BorderThickness="1" FontSize="16" HorizontalAlignment="Left" Margin="309,625,0,0" VerticalAlignment="Top" Width="40"/>
-        <Button HorizontalAlignment="Left" Height="112" Margin="364,44,0,0" VerticalAlignment="Top" Width="112" Click="die1Click" Background="White" BorderBrush="White" >
-            <Image Name="iDie1"  Width="112" Source="img/die1.png"/>
+        <Button Name="btnDie1" HorizontalAlignment="Left" Height="112" Margin="364,44,0,0" VerticalAlignment="Top" Width="112" Click="die1Click" Background="White" BorderBrush="White" >
+            <Image Name="iDie1" Source="img/die1.png"/>
         </Button>
-        <Image Name="iDie2" HorizontalAlignment="Left" Height="112" Margin="364,169,0,0" VerticalAlignment="Top" Width="112" Source="img/die2.png"/>
-        <Image Name="iDie3" HorizontalAlignment="Left" Height="112" Margin="364,294,0,0" VerticalAlignment="Top" Width="112" Source="img/die3.png"/>
-        <Image Name="iDie4" HorizontalAlignment="Left" Height="112" Margin="364,419,0,0" VerticalAlignment="Top" Width="112" Source="img/die4.png"/>
-        <Image Name="iDie5" HorizontalAlignment="Left" Height="112" Margin="364,544,0,0" VerticalAlignment="Top" Width="112" Source="img/die5.png"/>
+        <Button Name="btnDie2" HorizontalAlignment="Left" Height="112" Margin="364,169,0,0" VerticalAlignment="Top" Width="112" Background="White" BorderBrush="White" Click="die2Click">
+            <Image Name="iDie2"  Source="img/die2.png"/>
+        </Button>
+        <Button Name="btnDie3" HorizontalAlignment="Left" Height="112" Margin="364,294,0,0" VerticalAlignment="Top" Width="112" Background="White" BorderBrush="White" Click="die3Click">
+            <Image Name="iDie3"  Source="img/die3.png"/>
+        </Button>
+        <Button Name="btnDie4" HorizontalAlignment="Left" Height="112" Margin="364,419,0,0" VerticalAlignment="Top" Width="112" Background="White" BorderBrush="White" Click="die4Click">
+            <Image Name="iDie4"  Source="img/die4.png"/>
+        </Button>
+        <Button Name="btnDie5" HorizontalAlignment="Left" Height="112" Margin="364,544,0,0" VerticalAlignment="Top" Width="112" Background="White" BorderBrush="White" Click="dick5Click" >
+            <Image Name="iDie5"  Source="img/die5.png"/>
+        </Button>
         <CheckBox Name="cbDie1" Content="Hold Die 1" HorizontalAlignment="Left" Margin="485,93,0,0" VerticalAlignment="Top"/>
         <CheckBox Name="cbDie2" Content="Hold Die 2" HorizontalAlignment="Left" Margin="485,218,0,0" VerticalAlignment="Top"/>
         <CheckBox Name="cbDie3" Content="Hold Die 3" HorizontalAlignment="Left" Margin="485,343,0,0" VerticalAlignment="Top"/>
