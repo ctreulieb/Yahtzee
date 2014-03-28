@@ -259,6 +259,12 @@ namespace YahtzeeClient
             btnLargeStraight.IsEnabled = !player.lowerSection.lgStraight.isScored;
             btnYahtzee.IsEnabled = !player.lowerSection.yahtzee.isScored;
             btnChance.IsEnabled = !player.lowerSection.chance.isScored;
+
+            cbDie1.IsEnabled = true;
+            cbDie2.IsEnabled = true;
+            cbDie3.IsEnabled = true;
+            cbDie4.IsEnabled = true;
+            cbDie5.IsEnabled = true;
         }
 
         private void disableButtons()
@@ -278,6 +284,12 @@ namespace YahtzeeClient
             btnYahtzee.IsEnabled = false;
             btnChance.IsEnabled = false;
             btnRoll.IsEnabled = false;
+
+            cbDie1.IsEnabled = false;
+            cbDie2.IsEnabled = false;
+            cbDie3.IsEnabled = false;
+            cbDie4.IsEnabled = false;
+            cbDie5.IsEnabled = false;
         }
 
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
