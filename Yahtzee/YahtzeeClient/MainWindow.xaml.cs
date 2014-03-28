@@ -16,10 +16,13 @@ using System.Windows.Shapes;
 using System.ServiceModel;
 using YahtzeeLibrary;
 
+
+
 namespace YahtzeeClient
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml, implements ICallBack
+    /// to handle callbacks from the server.
     /// </summary>
         [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant,
         UseSynchronizationContext = false)]
@@ -34,7 +37,12 @@ namespace YahtzeeClient
         private int[] dice = { 1, 1, 2, 3, 4 };
         //stand in hard values for testing
 
-        
+        /// <summary>
+        /// Initilizes The Window.
+        /// looks for and connects to the game server, if server returns player id 0 game is full will close client.
+        /// Will update ui to diplay what player id this Clint.
+        /// Will toggle all DieCheckboxes to false so users can't hold dice before game begins.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
