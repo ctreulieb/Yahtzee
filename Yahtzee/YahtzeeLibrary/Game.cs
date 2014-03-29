@@ -69,7 +69,7 @@ namespace YahtzeeLibrary
 
 
         /// <summary>
-        /// will take the value of dice the client rolled adn display it to all other users.
+        /// will take the value of dice the client rolled and display it to all other users.
         /// </summary>
         /// <param name="dice"> int[5]  that contains the values of the dice</param>
         [OperationContract(IsOneWay=true)]

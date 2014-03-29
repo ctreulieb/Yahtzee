@@ -39,8 +39,8 @@ namespace YahtzeeClient
 
         /// <summary>
         /// Initilizes The Window.
-        /// looks for and connects to the game server, if server returns player id 0 game is full will close client.
-        /// Will update ui to diplay what player id this Clint.
+        /// looks for and connects to the game server, if server returns player id 0 the game is full and client will.
+        /// Will update ui to display what player id this Client.
         /// Will toggle all DieCheckboxes to false so users can't hold dice before game begins.
         /// </summary>
         public MainWindow()
