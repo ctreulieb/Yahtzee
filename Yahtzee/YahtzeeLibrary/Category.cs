@@ -145,7 +145,21 @@ namespace YahtzeeLibrary
             score = 0;
             isScored = true;
             Array.Sort(dice);
-            if (dice[2] == dice[1] + 1 && dice[3] == dice[2] + 1 && ((dice[1] == dice[0] + 1) || (dice[4] == dice[3] + 1)))
+            HashSet<int> hDice = new HashSet<int>();
+            foreach (int i in dice)
+                hDice.Add(i);
+            int prev = 100;
+            bool isSmstr = true;
+            foreach(int i in hDice)
+            {
+                if (prev != 100)
+                {
+                    if (i != prev + 1)
+                        isSmstr = false;
+                }
+                prev = i;
+            }
+            if (isSmstr)
                 score = 30;
 
         }
