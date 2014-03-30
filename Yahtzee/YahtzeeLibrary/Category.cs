@@ -159,7 +159,7 @@ namespace YahtzeeLibrary
                 }
                 prev = i;
             }
-            if (isSmstr)
+            if (isSmstr ||(dice[2] == dice[1] + 1 && dice[3] == dice[2] + 1 && ((dice[1] == dice[0] + 1) || (dice[4] == dice[3] + 1))))
                 score = 30;
 
         }
