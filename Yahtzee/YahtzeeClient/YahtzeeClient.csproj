@@ -97,18 +97,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YahtzeeLibrary\YahtzeeLibrary.csproj">
-      <Project>{2d83cbbf-cf7c-4538-b925-b3d18b9cd961}</Project>
-      <Name>YahtzeeLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\die1.png" />
     <Resource Include="img\die2.png" />
     <Resource Include="img\die3.png" />
     <Resource Include="img\die4.png" />
     <Resource Include="img\die5.png" />
     <Resource Include="img\die6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YahtzeeContracts\YahtzeeContracts.csproj">
+      <Project>{6a6d57ae-995f-4aa8-8aa2-70fcfdfce847}</Project>
+      <Name>YahtzeeContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

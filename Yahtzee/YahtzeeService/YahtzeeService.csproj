@@ -51,6 +51,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YahtzeeContracts\YahtzeeContracts.csproj">
+      <Project>{6a6d57ae-995f-4aa8-8aa2-70fcfdfce847}</Project>
+      <Name>YahtzeeContracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YahtzeeLibrary\YahtzeeLibrary.csproj">
       <Project>{2d83cbbf-cf7c-4538-b925-b3d18b9cd961}</Project>
       <Name>YahtzeeLibrary</Name>
