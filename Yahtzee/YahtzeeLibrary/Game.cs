@@ -47,9 +47,14 @@ namespace YahtzeeLibrary
 
         public void leaveGame(int Id)
         {
+            if(currentTurn == Id) {
+                nextTurn();
+            }
+
             var playerToRemove = players.Single(p => p.playerID == Id);
             players.Remove(playerToRemove);
             Console.WriteLine("Player {0} has left the game!" , Id);
+            updateAllClients();
         }
 
 

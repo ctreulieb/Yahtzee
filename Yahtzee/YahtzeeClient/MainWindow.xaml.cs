@@ -300,8 +300,12 @@ namespace YahtzeeClient
 
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (playerID != 0 && game != null)
-                game.leaveGame(playerID);
+            try {
+                if (playerID != 0 && game != null)
+                    game.leaveGame(playerID);
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnOnes_Click(object sender, RoutedEventArgs e)
@@ -508,8 +512,12 @@ namespace YahtzeeClient
 
             if (!(bool)cbDie5.IsChecked)
                 dice[4] = random.Next(1, 7);
-            
-            game.updateDice(dice);
+
+            try {
+                game.updateDice(dice);    
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void diplayDice() {
             var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
