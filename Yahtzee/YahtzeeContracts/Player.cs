@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: Player.cs
+// Purpose: Houses the player class which contains their scores, playerID and ready status.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

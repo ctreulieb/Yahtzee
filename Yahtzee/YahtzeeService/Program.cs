@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: Program.cs
+// Purpose: Main program for the yahtzee server.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

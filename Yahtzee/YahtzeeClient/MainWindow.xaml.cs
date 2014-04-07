@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: MainWindow.xaml.cs
+// Purpose: Cointains the logic for the Yahtzee game window.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +45,7 @@ namespace YahtzeeClient
         /// Initilizes The Window.
         /// looks for and connects to the game server, if server returns player id 0 the game is full and client will.
         /// Will update ui to display what player id this Client.
-        /// Will toggle all DieCheckboxes to false so users can't hold dice before game begins.
+        /// Will toggle all DieCheckboxes to unchecked and disabled so users can't hold dice before game begins.
         /// </summary>
         public MainWindow()
         {
@@ -80,6 +84,10 @@ namespace YahtzeeClient
             }
         }
 
+        /// <summary>
+        /// Sends message to client
+        /// </summary>
+        /// <param name="message">The message to be sent to the client</param>
         private delegate void sendMessageDelegate(string message);        
         public void sendMessage(string message)
         {
@@ -98,7 +106,11 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
+        /// <summary>
+        /// Updates GUI based on gameState passed to it containing every player's scores so far as well as the dice
+        /// </summary>
+        /// <param name="gameState">GameState object containing the scores and dice</param>
         private delegate void ClientUpdateDelegate(GameState gameState);
         public void UpdateGui(GameState gameState)
         {
@@ -153,6 +165,10 @@ namespace YahtzeeClient
             }
         }
 
+        /// <summary>
+        /// fills in player one's scores
+        /// </summary>
+        /// <param name="player">player object containing the scores</param>
         private void fillPlayerOneSheet(Player player) 
         {
             lp1Aces.Content = player.upperSection.aces.getScore();
@@ -181,6 +197,10 @@ namespace YahtzeeClient
             lp1GrandTotal.Content = player.getGrandTotal();
         }
 
+        /// <summary>
+        /// fills in player two's scores
+        /// </summary>
+        /// <param name="player">player object containing the scores</param>
         private void fillPlayerTwoSheet(Player player)
         {
             lp2Aces.Content = player.upperSection.aces.getScore();
@@ -210,6 +230,10 @@ namespace YahtzeeClient
             lp2GrandTotal.Content = player.getGrandTotal();
         }
 
+        /// <summary>
+        /// fills in player three's scores
+        /// </summary>
+        /// <param name="player">player object containing the scores</param>
         private void fillPlayerThreeSheet(Player player)
         {
             lp3Aces.Content = player.upperSection.aces.getScore();
@@ -239,6 +263,10 @@ namespace YahtzeeClient
             lp3GrandTotal.Content = player.getGrandTotal();
         }
 
+        /// <summary>
+        /// fills in player four's scores
+        /// </summary>
+        /// <param name="player">player object containing the scores</param>
         private void fillPlayerFourSheet(Player player)
         {
             lp4Aces.Content = player.upperSection.aces.getScore();
@@ -268,8 +296,12 @@ namespace YahtzeeClient
             lp4GrandTotal.Content = player.getGrandTotal();
         }
 
-     
-        private void enableButtons(Player player) {
+        /// <summary>
+        /// enables the die comboboxes and scoring buttons that haven't already been scored yet
+        /// </summary>
+        /// <param name="player">Player object containing information on what categories have been scored already</param>
+        private void enableButtons(Player player) 
+        {
 
             btnAces.IsEnabled = !player.upperSection.aces.isScored;
             btnTwos.IsEnabled = !player.upperSection.twos.isScored;
@@ -292,7 +324,10 @@ namespace YahtzeeClient
             cbDie4.IsEnabled = true;
             cbDie5.IsEnabled = true;
         }
-
+        
+        /// <summary>
+        /// Disables all buttons and combo boxes
+        /// </summary>
         private void disableButtons()
         {
             btnAces.IsEnabled =  false;
@@ -318,6 +353,9 @@ namespace YahtzeeClient
             cbDie5.IsEnabled = false;
         }
 
+        /// <summary>
+        /// handles what needs to happen when closing the client
+        /// </summary>
         private void closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try {
@@ -328,6 +366,64 @@ namespace YahtzeeClient
             }
         }
 
+        /// <summary>
+        /// sets the enabled status of all the check boxes to the value passed in
+        /// </summary>
+        private void toggleDieCheckboxEnable(bool value) 
+        {
+            cbDie1.IsEnabled = value;
+            cbDie2.IsEnabled = value;
+            cbDie3.IsEnabled = value;
+            cbDie4.IsEnabled = value;
+            cbDie5.IsEnabled = value;
+        }
+        
+        /// <summary>
+        /// updates the display for the dice
+        /// </summary>
+        private void diplayDice() 
+        {
+            var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
+            iDie1.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
+            iDie2.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[2].ToString() + ".png", UriKind.Relative);
+            iDie3.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
+            iDie4.Source = new BitmapImage(uriSource);
+
+            uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
+            iDie5.Source = new BitmapImage(uriSource);
+        }        
+
+        /// <summary>
+        /// recieves the updated dice values and calls a method to display them
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
+        private delegate void ClientDiceUpdate(int[] dice);
+        public void diceUpdated(int[] dice)
+        {
+            try {
+                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+                {
+                    this.dice = dice;
+                    diplayDice();
+                } else 
+                {
+                    this.Dispatcher.BeginInvoke(new ClientDiceUpdate(diceUpdated), dice);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }                 
+        }
+
+        //Button handlers
         private void btnOnes_Click(object sender, RoutedEventArgs e)
         {
             try 
@@ -496,14 +592,7 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message);
             }
         }
-        private void toggleDieCheckboxEnable(bool value) {
-            cbDie1.IsEnabled = value;
-            cbDie2.IsEnabled = value;
-            cbDie3.IsEnabled = value;
-            cbDie4.IsEnabled = value;
-            cbDie5.IsEnabled = value;
-        }
-
+        
         private void btnRoll_Click(object sender, RoutedEventArgs e)
         {
             if (++numRolls == 3) {
@@ -539,43 +628,7 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message);
             }
         }
-        private void diplayDice() {
-            var uriSource = new Uri("img/die" + dice[0].ToString() + ".png", UriKind.Relative);
-            iDie1.Source = new BitmapImage(uriSource);
-
-            uriSource = new Uri("img/die" + dice[1].ToString() + ".png", UriKind.Relative);
-            iDie2.Source = new BitmapImage(uriSource);
-
-            uriSource = new Uri("img/die" + dice[2].ToString() + ".png", UriKind.Relative);
-            iDie3.Source = new BitmapImage(uriSource);
-
-            uriSource = new Uri("img/die" + dice[3].ToString() + ".png", UriKind.Relative);
-            iDie4.Source = new BitmapImage(uriSource);
-
-            uriSource = new Uri("img/die" + dice[4].ToString() + ".png", UriKind.Relative);
-            iDie5.Source = new BitmapImage(uriSource);
-        }
-
-        private delegate void ClientDiceUpdate(int[] dice);
-        public void diceUpdated(int[] dice)
-        {
-            try {
-                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
-                {
-                    this.dice = dice;
-                    diplayDice();
-                } else 
-                {
-                    this.Dispatcher.BeginInvoke(new ClientDiceUpdate(diceUpdated), dice);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }                 
-        }
-
+        
         private void btnReady_Click(object sender, RoutedEventArgs e)
         {
             try {

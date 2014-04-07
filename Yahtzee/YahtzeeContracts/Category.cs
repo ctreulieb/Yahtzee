@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: Category.cs
+// Purpose: Contains Category base class along with classes for each scoring category that inherit from Category and overload the setScore method 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: GameState.cs
+// Purpose: Contains the GameState class, which holds the game state and tracks the players, dice, and who's turn it is.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

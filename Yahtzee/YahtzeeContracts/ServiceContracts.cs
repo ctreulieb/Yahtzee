@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: 
+// Purpose:
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -85,43 +89,94 @@ namespace YahtzeeContracts
         [OperationContract]
         void leaveGame(int Id);
 
+        /// <summary>
+        /// calculates the score for the Aces category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract]
         void scoreAces(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Twos category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreTwos(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Threes category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreThrees(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Fours category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreFours(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Fives category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreFives(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Sixes category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreSixes(int playerID, int[] dice);
 
-
+        /// <summary>
+        /// calculates the score for the Three of a kind category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreThreeOfAKind(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Four of a kind category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreFourOfAKind(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Full House category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreFullHouse(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Small Straight category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreSMStraight(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Large Straight category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreLGStraight(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Yahtzee category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreYahtzee(int playerID, int[] dice);
 
+        /// <summary>
+        /// calculates the score for the Chance category for the selected player and dice
+        /// </summary>
+        /// <param name="dice">int array representing the dice</param>
         [OperationContract(IsOneWay = true)]
         void scoreChance(int playerID, int[] dice);
     }

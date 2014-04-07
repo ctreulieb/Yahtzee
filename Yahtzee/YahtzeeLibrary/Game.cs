@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Authors: Tyler Garrow, Craig Treulieb
+// Date: 07/04/2014
+// File: Game.cs
+// Purpose: Contains implementation of IGame contract. Allows for joining, leaving, scoring, and taking turns in a game
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
