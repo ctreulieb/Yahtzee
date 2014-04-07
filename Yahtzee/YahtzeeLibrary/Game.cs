@@ -53,7 +53,7 @@ namespace YahtzeeLibrary
 
             if(gameOver) {
                 var sortedPlayers = players.OrderBy(p => p.getGrandTotal()).ToList();
-
+                sortedPlayers.Reverse();
                 sendMessageToAllClients("GameOver Player " + sortedPlayers[0].playerID + "Won");
             }
         }
