@@ -230,7 +230,7 @@ namespace YahtzeeContracts
         }
 
         public bool allScored() {
-            return (true == aces.isScored) && (true == twos.isScored) && (true  == threes.isScored) && (true == fours.isScored) && (true == fives.isScored) && ( true  == sixes.isScored);
+            return ((true == aces.isScored) && (true == twos.isScored) && (true  == threes.isScored) && (true == fours.isScored) && (true == fives.isScored) && ( true  == sixes.isScored));
         }
 
         public bool hasBonus()
@@ -283,7 +283,7 @@ namespace YahtzeeContracts
         }
 
         public bool allScored() {
-            return (true == threeOfAKind.isScored) && (true == fourOfAKind.isScored) && (true == fullHouse.isScored) && (true == smStraight.isScored) && (true == lgStraight.isScored) && (true == yahtzee.isScored) && (true == chance.isScored);
+            return ((true == threeOfAKind.isScored) && (true == fourOfAKind.isScored) && (true == fullHouse.isScored) && (true == smStraight.isScored) && (true == lgStraight.isScored) && (true == yahtzee.isScored) && (true == chance.isScored));
         }
 
         public int getTotal()
