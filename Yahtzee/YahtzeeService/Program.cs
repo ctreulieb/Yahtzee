@@ -18,10 +18,16 @@ namespace YahtzeeService
                 // Start the service
                 servHost.Open();
 
-                Console.WriteLine("Yahtzee game service started, Press <Enter> to quit");
-                Console.ReadKey();
+                Console.WriteLine("Yahtzee game service started, Enter 'close' to quit service");
 
-                servHost.Close();
+                string input = "";
+                while (input == Console.ReadLine())
+                {
+                    if (input == "close") 
+                    {
+                        servHost.Close();
+                    }
+                }
             }catch(Exception ex) {
                 Console.WriteLine(ex.Message);
                 Console.ReadKey();

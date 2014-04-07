@@ -31,6 +31,10 @@ namespace YahtzeeContracts
             this.callBack = callBack;
         }
 
+        public bool allScored() {
+            return (true == upperSection.allScored()) && (true == lowerSection.allScored());
+        }
+        
         public int getGrandTotal() {
             return upperSection.getTotal() + lowerSection.getTotal();
         }

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using YahtzeeContracts;
 /*
- * remove end turn contract, turn will en dafter scoring 
- * add player id argument to all scoring
- */
-
+ * 
+ * */
 namespace YahtzeeLibrary
 {
 
@@ -21,6 +19,11 @@ namespace YahtzeeLibrary
         private int playerID = 1;
         private int[] dice = new int[6];
         private int currentTurn = 1;
+
+        ~Game() {
+            sendMessageToAllClients("Yahzee game service is no longer running you will not be able to complete the game. Sorry");
+        }
+
         public int joinGame()
         {
             //no more than 4 players
@@ -37,6 +40,18 @@ namespace YahtzeeLibrary
         private void nextTurn() {
             if (++currentTurn > players.Count)
                 currentTurn = 1;
+
+            bool gameOver = true;
+            foreach(Player p in players) {
+                if (!p.allScored())
+                    gameOver = false;
+            }
+
+            if(gameOver) {
+                var sortedPlayers = players.OrderBy(p => p.getGrandTotal()).ToList();
+
+                sendMessageToAllClients("GameOver Player " + sortedPlayers[0].playerID + "Won");
+            }
         }
 
         private void updateAllClients(){
@@ -45,6 +60,12 @@ namespace YahtzeeLibrary
             }
         }
 
+        private void sendMessageToAllClients(string message) {
+            foreach (Player p in players)
+            {
+                p.callBack.sendMessage(message);
+            }
+        }
         public void leaveGame(int Id)
         {
             if(currentTurn == Id) {
@@ -55,6 +76,7 @@ namespace YahtzeeLibrary
             players.Remove(playerToRemove);
             Console.WriteLine("Player {0} has left the game!" , Id);
             updateAllClients();
+            sendMessageToAllClients("Player " + Id + " has left the game");
         }
 
 

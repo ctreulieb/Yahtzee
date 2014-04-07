@@ -79,6 +79,26 @@ namespace YahtzeeClient
                 MessageBox.Show(ex.Message); 
             }
         }
+
+        private delegate void sendMessageDelegate(string message);        
+        public void sendMessage(string message)
+        {
+            try 
+            {
+                if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+                {
+                    MessageBox.Show(message);
+                }
+                else
+                {
+                    this.Dispatcher.BeginInvoke(new sendMessageDelegate(sendMessage), message);
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private delegate void ClientUpdateDelegate(GameState gameState);
         public void UpdateGui(GameState gameState)
         {
@@ -596,6 +616,5 @@ namespace YahtzeeClient
             if (numRolls != 0)
                 cbDie5.IsChecked = !cbDie5.IsChecked;
         }
-
     }
 }

@@ -229,6 +229,10 @@ namespace YahtzeeContracts
             sixes = new Sixes();
         }
 
+        public bool allScored() {
+            return (true == aces.isScored) && (true == twos.isScored) && (true  == threes.isScored) && (true == fours.isScored) && (true == fives.isScored) && ( true  == sixes.isScored);
+        }
+
         public bool hasBonus()
         {
             if (getSubTotal() >= 63)
@@ -276,6 +280,10 @@ namespace YahtzeeContracts
             lgStraight = new LgStraight();
             yahtzee = new Yahtzee();
             chance = new Chance();
+        }
+
+        public bool allScored() {
+            return (true == threeOfAKind.isScored) && (true == fourOfAKind.isScored) && (true == fullHouse.isScored) && (true == smStraight.isScored) && (true == lgStraight.isScored) && (true == yahtzee.isScored) && (true == chance.isScored);
         }
 
         public int getTotal()

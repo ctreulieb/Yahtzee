@@ -33,6 +33,14 @@ namespace YahtzeeContracts
         /// <param name="dice">int[5] containing the values of the current dice state</param>
         [OperationContract(IsOneWay = true)]
         void diceUpdated(int[] dice);
+
+        /// <summary>
+        /// implemented by the client
+        /// will give the client a message
+        /// </summary>
+        /// <param name="message"></param>
+        [OperationContract(IsOneWay = true)]
+        void sendMessage(string message);
     }
 
     /// <summary>
