@@ -54,7 +54,54 @@ namespace YahtzeeLibrary
             if(gameOver) {
                 var sortedPlayers = players.OrderBy(p => p.getGrandTotal()).ToList();
                 sortedPlayers.Reverse();
-                sendMessageToAllClients("GameOver Player " + sortedPlayers[0].playerID + "Won");
+                if(sortedPlayers.Count == 1)
+                    sendMessageToAllClients("GameOver Player " + sortedPlayers[0].playerID + "Won");
+                else if(sortedPlayers.Count == 2)
+                {
+                    if(sortedPlayers[0].getGrandTotal() == sortedPlayers[1].getGrandTotal())
+                        sendMessageToAllClients("Game Over! Tie Game!");
+                    else
+                        sendMessageToAllClients("Game Over! Player " + sortedPlayers[0].playerID + "Won");
+                }
+                else if(sortedPlayers.Count == 3)
+                {
+                    if(sortedPlayers[0].getGrandTotal() == sortedPlayers[1].getGrandTotal())
+                    {
+                        if(sortedPlayers[0].getGrandTotal() == sortedPlayers[2].getGrandTotal())
+                        {
+                            sendMessageToAllClients("Game Over! Three Way Tie!");
+                        }
+                        else
+                        {
+                            sendMessageToAllClients("Game Over! Players " + sortedPlayers[0].playerID + ", and " + sortedPlayers[1].playerID + " Won");
+                        }
+                    }
+                    else
+                    {
+                        sendMessageToAllClients("Game Over! Player " + sortedPlayers[0].playerID + "Won");
+                    }
+                }
+                else
+                {
+                    if(sortedPlayers[0].getGrandTotal() == sortedPlayers[1].getGrandTotal())
+                    {
+                        if(sortedPlayers[0].getGrandTotal() == sortedPlayers[2].getGrandTotal())
+                        {
+                            if(sortedPlayers[0].getGrandTotal() == sortedPlayers[3].getGrandTotal())
+                            {
+                                sendMessageToAllClients("Game Over! Four Way Tie! Absolutely Remarkable!");
+                            }
+                        }
+                        else
+                        {
+                            sendMessageToAllClients("Game Over! Players " + sortedPlayers[0].playerID + ", " + sortedPlayers[1].playerID + ", and " + sortedPlayers[2].playerID + " Won");
+                        }
+                    }
+                    else
+                    {
+                        sendMessageToAllClients("Game Over! Player " + sortedPlayers[0].playerID + "Won");
+                    }
+                }
             }
         }
 
